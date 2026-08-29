@@ -1,0 +1,46 @@
+[
+    {
+        "id": "kampus-a",
+        "name": "Kampus A Unindra (Rancho)",
+        "code": "KAMPUS A",
+        "address": "Jl. Nangka No.58C, TB Simatupang, Tanjung Barat, Jagakarsa, Jakarta Selatan",
+        "image": "https://placehold.co/800x450/334EAC/FFF?text=Foto/Denah+Kampus+A+(Rancho)",
+        "maps_iframe": "https://maps.google.com/maps?q=Universitas+Indraprasta+PGRI+Kampus+A&t=&z=15&ie=UTF8&iwloc=&output=embed",
+        "facilities": [
+            "Sekretariat Unitas SI",
+            "Rektorat",
+            "Perpustakaan Pusat",
+            "Laboratorium Komputer",
+            "Aula Utama"
+        ]
+    },
+    {
+        "id": "kampus-b",
+        "name": "Kampus B Unindra (Gedong)",
+        "code": "KAMPUS B",
+        "address": "Jl. Raya Tengah No.80, Pasar Rebo, Jakarta Timur",
+        "image": "https://placehold.co/800x450/0284C7/FFF?text=Foto/Denah+Kampus+B+(Gedong)",
+        "maps_iframe": "https://maps.google.com/maps?q=Universitas+Indraprasta+PGRI+Kampus+B&t=&z=15&ie=UTF8&iwloc=&output=embed",
+        "facilities": [
+            "Gedung Perkuliahan SI",
+            "Laboratorium Hardware & Bahasa",
+            "Kantin Central",
+            "Lapangan Olahraga",
+            "Masjid"
+        ]
+    },
+    {
+        "id": "kampus-c",
+        "name": "Kampus C Unindra (Ciracas)",
+        "code": "KAMPUS C",
+        "address": "Jl. Raya Ciracas No.38, Ciracas, Jakarta Timur",
+        "image": "https://placehold.co/800x450/0D9488/FFF?text=Foto/Denah+Kampus+C+(Ciracas)",
+        "maps_iframe": "https://maps.google.com/maps?q=Universitas+Indraprasta+PGRI+Kampus+C&t=&z=15&ie=UTF8&iwloc=&output=embed",
+        "facilities": [
+            "Gedung Perkuliahan Baru",
+            "Auditorium",
+            "Area Parkir Terpadu",
+            "Ruang Kemahasiswaan"
+        ]
+    }
+]

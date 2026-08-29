@@ -1,0 +1,117 @@
+[
+    {
+        "id": 1,
+        "slug": "aimpact-2025",
+        "title": "AIMPACT 2025",
+        "category": "Seminar",
+        "date": "2025-05-15",
+        "date_label": "15 Mei 2025",
+        "cover_image": "https://placehold.co/600x400/334EAC/FFF?text=AIMPACT+2025",
+        "excerpt": "Seminar dan talkshow teknologi seputar implementasi dan dampak Artificial Intelligence di industri digital.",
+        "description": "AIMPACT 2025 merupakan kegiatan seminar nasional yang diselenggarakan Unitas SI untuk membedah perkembangan AI, Machine Learning, serta peluang karir mahasiswa Sistem Informasi di era kecerdasan buatan.",
+        "gallery": [
+            "https://placehold.co/800x500/334EAC/FFF?text=Dokumentasi+AIMPACT+1",
+            "https://placehold.co/800x500/334EAC/FFF?text=Dokumentasi+AIMPACT+2"
+        ]
+    },
+    {
+        "id": 2,
+        "slug": "siconnect-2025",
+        "title": "Meet-up SICONNECT 2025",
+        "category": "Keakraban",
+        "date": "2025-06-20",
+        "date_label": "20 Juni 2025",
+        "cover_image": "https://placehold.co/600x400/334EAC/FFF?text=SICONNECT+2025",
+        "excerpt": "Ajang silaturahmi, temu ramah, dan networking antar mahasiswa aktif serta alumni Sistem Informasi Unindra.",
+        "description": "Meet-up SICONNECT 2025 menjadi wadah diskusi interaktif, sharing session pengalaman karir, dan mempererat relasi antar lintas angkatan mahasiswa Sistem Informasi.",
+        "gallery": [
+            "https://placehold.co/800x500/334EAC/FFF?text=Dokumentasi+SICONNECT+1",
+            "https://placehold.co/800x500/334EAC/FFF?text=Dokumentasi+SICONNECT+2"
+        ]
+    },
+    {
+        "id": 3,
+        "slug": "musun-si-2025",
+        "title": "Musun SI 2025",
+        "category": "Organisasi",
+        "date": "2025-07-25",
+        "date_label": "25 Juli 2025",
+        "cover_image": "https://placehold.co/600x400/334EAC/FFF?text=Musun+SI+2025",
+        "excerpt": "Musyawarah Unitas Sistem Informasi periode 2024/2025 untuk evaluasi dan LPO organisasi.",
+        "description": "Musun SI 2025 merupakan forum tertinggi organisasi untuk mengevaluasi laporan pertanggungjawaban pengurus serta menetapkan keputusan strategis Unitas SI.",
+        "gallery": [
+            "https://placehold.co/800x500/334EAC/FFF?text=Dokumentasi+Musun+SI+2025"
+        ]
+    },
+    {
+        "id": 4,
+        "slug": "galaksi-vol-1",
+        "title": "GALAKSI Vol. 1",
+        "category": "Keakraban",
+        "date": "2025-11-22",
+        "date_label": "22 - 23 November 2025",
+        "cover_image": "https://placehold.co/600x400/0284C7/FFF?text=GALAKSI+Vol.1",
+        "excerpt": "Gathering dan keakraban keluarga besar mahasiswa Sistem Informasi Unindra di Puncak, Bogor.",
+        "description": "GALAKSI (Gathering and Leadership Activity of System Information) Vol. 1 diselenggarakan di Puncak, Bogor sebagai sarana mempererat keakraban, solidaritas, dan kepemimpinan mahasiswa.",
+        "gallery": [
+            "https://placehold.co/800x500/0284C7/FFF?text=Dokumentasi+GALAKSI+1",
+            "https://placehold.co/800x500/0284C7/FFF?text=Dokumentasi+GALAKSI+2"
+        ]
+    },
+    {
+        "id": 5,
+        "slug": "ldo-2026",
+        "title": "LDO 2026",
+        "category": "Kaderisasi",
+        "date": "2026-02-10",
+        "date_label": "10 Februari 2026",
+        "cover_image": "https://placehold.co/600x400/0284C7/FFF?text=LDO+2026",
+        "excerpt": "Latihan Dasar Organisasi untuk pembentukan karakter, kepemimpinan, dan kaderisasi pengurus baru.",
+        "description": "LDO 2026 dirancang untuk membekali calon pengurus Unitas SI dengan pemahaman manajemen organisasi, problem solving, serta nilai-nilai kepemimpinan yang solid.",
+        "gallery": [
+            "https://placehold.co/800x500/0284C7/FFF?text=Dokumentasi+LDO+2026"
+        ]
+    },
+    {
+        "id": 6,
+        "slug": "sgts-2026",
+        "title": "SiBelajar Goes to School",
+        "category": "Pengabdian",
+        "date": "2026-03-18",
+        "date_label": "18 Maret 2026",
+        "cover_image": "https://placehold.co/600x400/0D9488/FFF?text=SiBelajar+Goes+to+School",
+        "excerpt": "Program pengabdian masyarakat Unitas SI memberikan edukasi teknologi dan IT ke sekolah-sekolah.",
+        "description": "SiBelajar Goes to School merupakan program pengabdian masyarakat dari Divisi PPPM Unitas SI untuk berbagi ilmu seputar teknologi informasi, pemrograman dasar, dan literasi digital.",
+        "gallery": [
+            "https://placehold.co/800x500/0D9488/FFF?text=Dokumentasi+SGTS+1"
+        ]
+    },
+    {
+        "id": 7,
+        "slug": "musun-si-2026",
+        "title": "Musun SI 26",
+        "category": "Organisasi",
+        "date": "2026-07-20",
+        "date_label": "20 Juli 2026",
+        "cover_image": "https://placehold.co/600x400/16A34A/FFF?text=Musun+SI+26",
+        "excerpt": "Musyawarah Unitas Sistem Informasi periode 2025/2026 dan regenerasi kepengurusan.",
+        "description": "Musun SI 26 merupakan agenda tahunan Laporan Pertanggungjawaban (LPJ) pengurus periode 2025/2026 serta prosesi pemilihan struktur pengurus Unitas SI selanjutnya.",
+        "gallery": [
+            "https://placehold.co/800x500/16A34A/FFF?text=Dokumentasi+Musun+26"
+        ]
+    },
+    {
+        "id": 8,
+        "slug": "nexora-2026",
+        "title": "Meet-up N.E.X.O.R.A",
+        "category": "Keakraban",
+        "date": "2026-08-15",
+        "date_label": "15 Agustus 2026",
+        "cover_image": "https://placehold.co/600x400/CA8A04/FFF?text=Meet-up+N.E.X.O.R.A",
+        "excerpt": "Gathering dan forum diskusi kolaboratif pengurus Unitas SI bersama angkatan baru.",
+        "description": "Meet-up N.E.X.O.R.A menjadi ruang temu kreatif untuk membahas rencana proyek, inovasi organisasi, serta mempererat bonding internal pengurus Unitas Sistem Informasi.",
+        "gallery": [
+            "https://placehold.co/800x500/CA8A04/FFF?text=Dokumentasi+NEXORA+1"
+        ]
+    }
+]

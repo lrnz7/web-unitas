@@ -1,0 +1,54 @@
+[
+    {
+        "id": 1,
+        "slug": "belajar-laravel",
+        "title": "Panduan Lengkap Belajar Laravel untuk Mahasiswa SI",
+        "category": "Tutorial",
+        "author": "Lorenzo Calvin",
+        "date": "2026-07-28",
+        "date_label": "28 Juli 2026",
+        "read_time": "5 min read",
+        "thumbnail": "images/IMG_5225.JPG",
+        "excerpt": "Laravel adalah framework PHP terpopuler saat ini. Artikel ini membahas langkah-langkah awal membangun aplikasi web menggunakan Laravel dari instalasi hingga deployment.",
+        "content": "<p>Laravel adalah salah satu framework PHP yang paling banyak digunakan di dunia pengembangan web modern. Dengan arsitektur MVC (Model-View-Controller) yang rapi, Laravel memudahkan pengembang untuk membangun aplikasi web yang terstruktur dan scalable.</p><h3>Mengapa Mahasiswa Sistem Informasi Harus Belajar Laravel?</h3><p>Di dunia industri dan perkuliahan, Laravel sering menjadi standar untuk pembuatan tugas akhir, portofolio, hingga sistem informasi skala perusahaan. Ekosistemnya yang luas seperti Blade Templating, Eloquent ORM, dan Artisan CLI membuat proses development menjadi jauh lebih cepat.</p><h3>Langkah Awal Memulai</h3><ol><li><strong>Instalasi Composer & PHP:</strong> Pastikan sistem lu sudah terinstall Composer dan PHP versi terbaru.</li><li><strong>Membuat Proyek Baru:</strong> Jalankan perintah <code>composer create-project laravel/laravel nama-proyek</code>.</li><li><strong>Memahami Structure Folder:</strong> Pelajari peran folder <code>routes/web.php</code>, <code>app/Models</code>, dan <code>resources/views</code>.</li></ol>"
+    },
+    {
+        "id": 2,
+        "slug": "recap-workshop-webdev",
+        "title": "Recap: Workshop Web Development Unitas SI 2026",
+        "category": "Kegiatan",
+        "author": "Divisi PPPM",
+        "date": "2026-08-20",
+        "date_label": "20 Agustus 2026",
+        "read_time": "3 min read",
+        "thumbnail": "images/IMG_5225.JPG",
+        "excerpt": "Workshop Web Development yang diadakan Unitas SI berjalan sukses dengan lebih dari 80 peserta aktif. Simak rangkuman keseruan dan ilmu yang dibagikan para mentor!",
+        "content": "<p>Unitas Sistem Informasi sukses menyelenggarakan Workshop Web Development 2026. Acara yang berlangsung secara hibrid ini diikuti oleh lebih dari 80 mahasiswa aktif Sistem Informasi Unindra.</p><h3>Materi yang Dibahas</h3><p>Peserta diajarkan langsung cara membangun RESTful API sederhana menggunakan Laravel, mengintegrasikannya dengan basis data MySQL, serta mendesain antarmuka yang bersih dan responsif menggunakan Tailwind CSS.</p>"
+    },
+    {
+        "id": 3,
+        "slug": "ui-ux-figma",
+        "title": "Mengenal UI/UX Design: Dari Figma ke Produk Nyata",
+        "category": "Design",
+        "author": "Divisi Komwira",
+        "date": "2026-08-10",
+        "date_label": "10 Agustus 2026",
+        "read_time": "4 min read",
+        "thumbnail": "images/IMG_5225.JPG",
+        "excerpt": "Desain antarmuka yang baik bukan hanya soal estetika, tapi soal pengalaman pengguna. Pelajari bagaimana Figma digunakan untuk merancang produk digital yang intuitif.",
+        "content": "<p>User Interface (UI) dan User Experience (UX) adalah dua fondasi utama dalam merancang produk digital yang sukses. Tanpa UX yang matang, aplikasi yang indah secara tampilan akan tetap membingungkan pengguna.</p><h3>Flow Perancangan di Figma</h3><p>Mulai dari wireframing low-fidelity, pembuatan komponen UI kit yang konsisten, hingga pembentukan prototype interaktif yang siap diserahterimakan ke tim developer.</p>"
+    },
+    {
+        "id": 4,
+        "slug": "tips-lolos-magang",
+        "title": "Tips Lolos Seleksi Magang di Perusahaan Teknologi",
+        "category": "Karir",
+        "author": "Divisi PSDM",
+        "date": "2026-08-01",
+        "date_label": "1 Agustus 2026",
+        "read_time": "6 min read",
+        "thumbnail": "images/IMG_5225.JPG",
+        "excerpt": "Musim magang tiba! Berikut adalah tips dan strategi yang telah terbukti membantu mahasiswa Sistem Informasi berhasil lolos seleksi di perusahaan teknologi impian.",
+        "content": "<p>Menghadapi persaingan dunia kerja dan magang membutuhkan persiapan matang, mulai dari portofolio hingga kemampuan wawancara teknis.</p><h3>3 Poin Penting Sebelum Melamar</h3><ul><li><strong>Portofolio Nyata:</strong> Tampilkan proyek nyata yang pernah dibuat di GitHub/Figma, bukan sekadar tugas kuliah.</li><li><strong>CV ATS-Friendly:</strong> Gunakan format ringkas dan to the point.</li><li><strong>Pemahaman Fundamental:</strong> Kuasai konsep logika, basis data, dan struktur data secara mendasar.</li></ul>"
+    }
+]

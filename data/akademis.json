@@ -1,0 +1,63 @@
+{
+    "krs": {
+        "title": "Panduan & Alur Pengisian KRS Online",
+        "description": "Kartu Rencana Studi (KRS) wajib diisi oleh seluruh mahasiswa aktif pada awal semester.",
+        "portal_url": "https://sia.unindra.ac.id",
+        "timeline": [
+            {
+                "step": 1,
+                "title": "Pembayaran BPP / SPP",
+                "desc": "Lakukan pembayaran biaya kuliah semester berjalan agar akun SIA aktif."
+            },
+            {
+                "step": 2,
+                "title": "Login Portal SIKA Unindra",
+                "desc": "Akses portal SIKA Unindra menggunakan NPM dan password masing-masing."
+            },
+            {
+                "step": 3,
+                "title": "Pilih Mata Kuliah",
+                "desc": "Pilih paket mata kuliah sesuai semester dan jadwal kelas yang tersedia."
+            },
+            {
+                "step": 4,
+                "title": "Cetak & Validasi Dosen PA",
+                "desc": "Cetak lembar KRS dan minta tanda tangan Dosen Pembimbing Akademik."
+            }
+        ]
+    },
+    "biaya": {
+        "title": "Informasi Biaya Perkuliahan",
+        "description": "Rincian komponen biaya pendidikan mahasiswa Sistem Informasi.",
+        "bank_info": {
+            "bank": "Bank Mandiri / BRI / BNI",
+            "account_name": "Operasional Unindra",
+            "note": "Pembayaran menggunakan kode Virtual Account (VA) yang tertera di Portal SIA."
+        },
+        "tables": [
+            {
+                "kategori": "Reguler A (Pagi)",
+                "bpp": "Rp 1.800.000",
+                "spp_per_sks": "Rp 50.000",
+                "catatan": "Wajib lunas sebelum pengisian KRS semester berjalan."
+            },
+            {
+                "kategori": "Reguler B (Malam)",
+                "bpp": "Rp 2.100.000",
+                "spp_per_sks": "Rp 55.000",
+                "catatan": "Wajib lunas sebelum pengisian KRS semester berjalan."
+            }
+        ]
+    },
+    "ujian": {
+        "title": "Tata Tertib & Ketentuan Ujian (UTS / UAS)",
+        "description": "Aturan yang wajib dipatuhi seluruh mahasiswa selama pelaksanaan ujian berlangsung.",
+        "rules": [
+            "Wajib membawa Kartu Peserta Ujian resmi yang sudah disahkan.",
+            "Hadir di ruang ujian minimal 15 menit sebelum ujian dimulai.",
+            "Berpakaian rapi, sopan, dan mengenakan almamater Unindra.",
+            "Toleransi keterlambatan maksimal 15 menit tanpa perpanjangan waktu.",
+            "Segala bentuk kecurangan akan dikenakan sanksi E pada mata kuliah terkait."
+        ]
+    }
+}

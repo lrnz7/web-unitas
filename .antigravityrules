@@ -1,0 +1,14 @@
+# ATURAN KODING ANTI-SLOP (WEB UNITAS SI)
+
+1. TATA LETAK & ELEMEN:
+   - DILARANG keras bikin "div soup" (div bersarang terlalu banyak tanpa alasan).
+   - Selalu pakai tag HTML5 yang jelas: <header>, <nav>, <main>, <article>, <section>, <footer>.
+
+2. LOGIKA & DATA:
+   - DILARANG keras nge-hardcode isi teks/list langsung di dalam UI.
+   - Semua data (list berita, daftar pengurus, event Unitas) HARUS diambil dari data dinamis (JSON/props/database).
+
+3. STYLING (TAILWIND CSS):
+   - Gunakan Tailwind CSS yang responsif (mobile-first).
+   - Efisiensi kode: kurangi utility class yang berulang.
+   - Wajib ada efek interaksi (hover, focus state) di setiap tombol dan link.

@@ -1,0 +1,506 @@
+[
+    {
+        "semester": 1,
+        "courses": [
+            {
+                "code": "KK33B174",
+                "name": "Konsep Sistem Informasi",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B111",
+                "name": "Algoritma 1",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B128",
+                "name": "Pemrograman 1",
+                "teori": 0,
+                "praktikum": 2,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B108",
+                "name": "Bahasa Inggris",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B113",
+                "name": "Matematika",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PK33B102",
+                "name": "Pancasila",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PK33B101",
+                "name": "Agama",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PK33B107",
+                "name": "Bahasa Indonesia",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            }
+        ]
+    },
+    {
+        "semester": 2,
+        "courses": [
+            {
+                "code": "KK33B224",
+                "name": "Manajemen Proses Bisnis",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B212",
+                "name": "Algoritma 2",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B229",
+                "name": "Pemrograman 2",
+                "teori": 0,
+                "praktikum": 2,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KB33B216",
+                "name": "Bahasa Inggris Bisnis",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B219",
+                "name": "Statistika",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B226",
+                "name": "Sistem Informasi Manajemen",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B246",
+                "name": "Jaringan Komputer",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 3
+            },
+            {
+                "code": "PK33B203",
+                "name": "Kewarganegaraan",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            }
+        ]
+    },
+    {
+        "semester": 3,
+        "courses": [
+            {
+                "code": "KB33B325",
+                "name": "Arsitektur dan Organisasi Komputer",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B342",
+                "name": "Pemrograman Web Dasar",
+                "teori": 0,
+                "praktikum": 2,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B310",
+                "name": "Pengantar Teknologi Informasi",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KB33B340",
+                "name": "Sistem Operasi",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B333",
+                "name": "Matriks dan Transformasi Linier",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B330",
+                "name": "Tata Kelola Teknologi Informasi",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B321",
+                "name": "Struktur Data",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B322",
+                "name": "Praktikum Struktur Data",
+                "teori": 0,
+                "praktikum": 2,
+                "praktek": 0,
+                "total_sks": 2
+            }
+        ]
+    },
+    {
+        "semester": 4,
+        "courses": [
+            {
+                "code": "KB33B435",
+                "name": "Sistem Basis Data",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KB33B436",
+                "name": "Praktikum Sistem Basis Data",
+                "teori": 0,
+                "praktikum": 2,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KB33B480",
+                "name": "Desain Antarmuka Pengguna",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B445",
+                "name": "Analisa & Perancangan Sistem Informasi",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 3
+            },
+            {
+                "code": "BB33B432",
+                "name": "Kecakapan Antar Personal",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B434",
+                "name": "Manajemen Proyek",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B443",
+                "name": "Pemrograman Web Lanjut",
+                "teori": 0,
+                "praktikum": 3,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B481",
+                "name": "Transformasi Digital",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            }
+        ]
+    },
+    {
+        "semester": 5,
+        "courses": [
+            {
+                "code": "BB33B554",
+                "name": "Rekayasa Perangkat Lunak",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B582",
+                "name": "Sistem Pendukung Keputusan",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B548",
+                "name": "CRM (Manajemen Hubungan Pelanggan)",
+                "teori": 1,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B568",
+                "name": "Rekayasa E-Bisnis",
+                "teori": 0,
+                "praktikum": 3,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B539",
+                "name": "Analisa Proses Bisnis",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B556",
+                "name": "ERP (Perencanaan Sumber Daya Perusahaan)",
+                "teori": 1,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B557",
+                "name": "Manajemen Layanan Teknologi Informasi",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PB33B509",
+                "name": "Kewirausahaan",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            }
+        ]
+    },
+    {
+        "semester": 6,
+        "courses": [
+            {
+                "code": "KK33B653",
+                "name": "Berpikir Komputasional",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KK33B662",
+                "name": "Akuntansi Keuangan",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B638",
+                "name": "Sistem Informasi Perusahaan dan Akuntansi",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B670",
+                "name": "Machine Learning",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 3
+            },
+            {
+                "code": "PK33B614",
+                "name": "Penulisan Ilmiah",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PK33B617",
+                "name": "Akhlak dan Etika",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PB33B618",
+                "name": "Aplikasi Kewirausahaan",
+                "teori": 1,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 2
+            },
+            {
+                "code": "KB33B631",
+                "name": "Pemrograman Berorientasi Objek",
+                "teori": 0,
+                "praktikum": 3,
+                "praktek": 0,
+                "total_sks": 3
+            }
+        ]
+    },
+    {
+        "semester": 7,
+        "courses": [
+            {
+                "code": "PB33B767",
+                "name": "Keamanan Informasi",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "KB33B783",
+                "name": "Audit Sistem Informasi",
+                "teori": 3,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 3
+            },
+            {
+                "code": "PK33B723",
+                "name": "Filsafat Ilmu",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KK33B771",
+                "name": "Kepemimpinan dan Manajemen Organisasi",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PK33B706",
+                "name": "Sejarah Pendidikan dan PGRI",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "KB33B775",
+                "name": "Kerja Praktek (KP)",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 2
+            },
+            {
+                "code": "PILIHAN-7",
+                "name": "Mata Kuliah Pilihan (SIG / Rantai Persediaan / Manajemen Data)",
+                "teori": 4,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 4
+            }
+        ]
+    },
+    {
+        "semester": 8,
+        "courses": [
+            {
+                "code": "PILIHAN-8A",
+                "name": "Mata Kuliah Pilihan (Pengolahan Citra / Mobile / Start Up Digital)",
+                "teori": 2,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 3
+            },
+            {
+                "code": "PILIHAN-8B",
+                "name": "Mata Kuliah Pilihan (Arsitektur Perusahaan / Teknologi Cloud)",
+                "teori": 1,
+                "praktikum": 0,
+                "praktek": 1,
+                "total_sks": 2
+            },
+            {
+                "code": "KB33B877",
+                "name": "Tugas Akhir (Skripsi)",
+                "teori": 6,
+                "praktikum": 0,
+                "praktek": 0,
+                "total_sks": 6
+            }
+        ]
+    }
+]

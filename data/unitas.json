@@ -1,0 +1,231 @@
+{
+  "brand": {
+    "name": "Unitas Sistem Informasi",
+    "short_name": "Unitas SI",
+    "logo": "images/logo-unitas.svg",
+    "alt": "Logo Unitas SI"
+  },
+  "about": {
+    "label": "ABOUT US",
+    "title": "Unitas\nSistem\nInformasi",
+    "description": "Unit Aktivitas Mahasiswa Sistem Informasi merupakan salah satu organisasi yang berada di bawah Fakultas Teknik dan Ilmu Komputer Universitas Indraprasta PGRI. Keberadaannya berfungsi sebagai wadah pengembangan potensi, kreativitas, dan aspirasi mahasiswa, khususnya di lingkup Program Studi Sistem Informasi.",
+    "cta_text": "Explore More",
+    "cta_url": "/about/unitas",
+    "logo": "images/logo-unitas.svg"
+  },
+  "hero": {
+    "badge": "Unitas Sistem Informasi",
+    "title": "Selamat Datang di Website Unitas Sistem Informasi",
+    "tagline": "Wadah kreasi, inovasi, kolaborasi, dan pengembangan teknologi mahasiswa Sistem Informasi.",
+    "bg_image": "images/IMG_5225.JPG",
+    "cta_primary": {
+      "text": "Struktural Organisasi",
+      "url": "/about/struktural"
+    }
+  },
+  "navigation": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "About",
+      "url": "/about/unitas",
+      "dropdown": [
+        {
+          "name": "Tentang Unitas",
+          "url": "/about/unitas"
+        },
+        {
+          "name": "Tentang Program Studi",
+          "url": "/about/prodi"
+        },
+        {
+          "name": "Struktur Organisasi",
+          "url": "/about/struktural"
+        }
+      ]
+    },
+    {
+      "name": "Informasi",
+      "url": "/informasi/akademis",
+      "dropdown": [
+        {
+          "name": "Akademis & Kurikulum",
+          "url": "/informasi/akademis"
+        },
+        {
+          "name": "Denah Kampus",
+          "url": "/informasi/denah-kampus"
+        },
+        {
+          "name": "Pengambilan Atribut",
+          "url": "/informasi/atribut"
+        }
+      ]
+    },
+    {
+      "name": "Event",
+      "url": "/events"
+    },
+    {
+      "name": "Blog",
+      "url": "/blog"
+    },
+    {
+      "name": "Open Recruitment",
+      "url": "/oprec"
+    },
+    {
+      "name": "Sisformerch",
+      "url": "/shop"
+    },
+    {
+      "name": "Kontak",
+      "url": "/kontak",
+      "dropdown": [
+        {
+          "name": "Hubungi Kami",
+          "url": "/kontak"
+        },
+        {
+          "name": "Tulis Aspirasi",
+          "url": "/kontak/aspirasi"
+        },
+        {
+          "name": "Tulis Artikel",
+          "url": "/kontak/tulis-artikel"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": 1,
+      "title": "Workshop Web Development Unitas",
+      "category": "Akademik",
+      "date": "2026-09-15",
+      "status": "upcoming",
+      "description": "Belajar ngebangun web dinamis dari nol sampai deploy."
+    },
+    {
+      "id": 2,
+      "title": "Musyawarah Unitas",
+      "category": "Organisasi",
+      "date": "2026-08-22",
+      "status": "past",
+      "description": "Evaluasi program kerja periode lalu."
+    }
+  ],
+  "blog": [
+    {
+      "id": 1,
+      "title": "Panduan Lengkap Belajar Laravel untuk Mahasiswa SI",
+      "category": "Tutorial",
+      "date": "28 Juli 2026",
+      "excerpt": "Laravel adalah framework PHP terpopuler saat ini. Artikel ini membahas langkah-langkah awal membangun aplikasi web menggunakan Laravel dari instalasi hingga deployment.",
+      "thumbnail": "images/IMG_5225.JPG",
+      "url": "/blog/belajar-laravel"
+    },
+    {
+      "id": 2,
+      "title": "Recap: Workshop Web Development Unitas SI 2026",
+      "category": "Kegiatan",
+      "date": "20 Agustus 2026",
+      "excerpt": "Workshop Web Development yang diadakan Unitas SI berjalan sukses dengan lebih dari 80 peserta aktif. Simak rangkuman keseruan dan ilmu yang dibagikan para mentor!",
+      "thumbnail": "images/IMG_5225.JPG",
+      "url": "/blog/recap-workshop-webdev"
+    },
+    {
+      "id": 3,
+      "title": "Mengenal UI/UX Design: Dari Figma ke Produk Nyata",
+      "category": "Design",
+      "date": "10 Agustus 2026",
+      "excerpt": "Desain antarmuka yang baik bukan hanya soal estetika, tapi soal pengalaman pengguna. Pelajari bagaimana Figma digunakan untuk merancang produk digital yang intuitif.",
+      "thumbnail": "images/IMG_5225.JPG",
+      "url": "/blog/ui-ux-figma"
+    },
+    {
+      "id": 4,
+      "title": "Tips Lolos Seleksi Magang di Perusahaan Teknologi",
+      "category": "Karir",
+      "date": "1 Agustus 2026",
+      "excerpt": "Musim magang tiba! Berikut adalah tips dan strategi yang telah terbukti membantu mahasiswa Sistem Informasi berhasil lolos seleksi di perusahaan teknologi impian.",
+      "thumbnail": "images/IMG_5225.JPG",
+      "url": "/blog/tips-lolos-magang"
+    }
+  ],
+  "features": [
+    {
+      "id": "sisformerch",
+      "title": "SISFORMERCH",
+      "description": "Merchandise resmi dan produk inovasi Unitas Sistem Informasi.",
+      "icon": "/assets/images/sisformerch-logo.png",
+      "link": "/shop"
+    },
+    {
+      "id": "blog",
+      "title": "BLOG",
+      "description": "Kumpulan informasi, tutorial, dan kabar seputar Unitas & Kampus.",
+      "icon": "/assets/images/blog-logo.png",
+      "link": "/blog"
+    },
+    {
+      "id": "open-recruitment",
+      "title": "OPEN RECRUITMENT",
+      "description": "Tertarik menjadi bagian dari Unitas Sistem Informasi? Cek informasi pendaftarannya!",
+      "icon": "/assets/images/oprec-logo.png",
+      "link": "/oprec"
+    }
+  ],
+  "gallery": [
+    {
+      "id": 1,
+      "title": "AIMPACT 2025",
+      "category": "aimpact",
+      "image": "https://placehold.co/600x400/334EAC/FFF?text=SICONNECT+1"
+    },
+    {
+      "id": 2,
+      "title": "Meet-up SICONNECT 2025",
+      "category": "siconnect",
+      "image": "https://placehold.co/600x400/334EAC/FFF?text=SICONNECT+2"
+    },
+    {
+      "id": 3,
+      "title": "Musun SI 2025",
+      "category": "musun25",
+      "image": "https://placehold.co/600x400/334EAC/FFF?text=SICONNECT+3"
+    },
+    {
+      "id": 4,
+      "title": "GALAKSI Vol. 1",
+      "category": "galaksi1",
+      "image": "https://placehold.co/600x400/0284C7/FFF?text=GALAKSI+1"
+    },
+    {
+      "id": 5,
+      "title": "LDO 2026",
+      "category": "ldo26",
+      "image": "https://placehold.co/600x400/0284C7/FFF?text=GALAKSI+2"
+    },
+    {
+      "id": 6,
+      "title": "SiBelajar Goes to School",
+      "category": "sgts",
+      "image": "https://placehold.co/600x400/0D9488/FFF?text=LDO+1"
+    },
+    {
+      "id": 7,
+      "title": "Musun SI 26",
+      "category": "musun26",
+      "image": "https://placehold.co/600x400/16A34A/FFF?text=SIBELAJAR+1"
+    },
+    {
+      "id": 8,
+      "title": "Meet-up N.E.X.O.R.A",
+      "category": "nexora",
+      "image": "https://placehold.co/600x400/CA8A04/FFF?text=MUSUN+1"
+    }
+  ]
+}

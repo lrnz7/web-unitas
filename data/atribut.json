@@ -1,0 +1,45 @@
+{
+    "title": "Alur & Informasi Pengambilan Atribut",
+    "description": "Panduan resmi pengambilan jaket almamater, atribut kemahasiswaan, dan KTM bagi mahasiswa Sistem Informasi Unindra.",
+    "status_info": {
+        "periode": "Semester Gasal 2026/2027",
+        "lokasi": "Gedung Kemahasiswaan Kampus A (Rancho) & Kampus B (Gedong)",
+        "jam_operasional": "Senin - Jumat (09.00 - 15.00 WIB)"
+    },
+    "steps": [
+        {
+            "step": 1,
+            "title": "Cetak Bukti Pembayaran",
+            "desc": "Pastikan telah melunasi BPP/SPP awal dan mencetak kwitansi pembayaran resmi dari bank/portal SIA."
+        },
+        {
+            "step": 2,
+            "title": "Pengisian Ukuran Almet & Kaos",
+            "desc": "Verifikasi ukuran jaket almamater dan kaos Unitas melalui portal atau formulir ukuran di loket."
+        },
+        {
+            "step": 3,
+            "title": "Penukaran Kupon Atribut",
+            "desc": "Tunjukkan bukti pembayaran dan KTM/KTP asli ke petugas loket Biro Kemahasiswaan."
+        },
+        {
+            "step": 4,
+            "title": "Pengecekan & Pengambilan Paket",
+            "desc": "Terima paket atribut (Almamater, Kaos, Dasi, Pin, & ID Card), lalu periksa kelengkapannya di tempat."
+        }
+    ],
+    "faq": [
+        {
+            "q": "Bagaimana jika ukuran jaket almamater tidak sesuai?",
+            "a": "Mahasiswa dapat melakukan penukaran ukuran maksimal 3 hari kerja setelah pengambilan, dengan catatan tag belum dilepas dan kondisi barang masih baru."
+        },
+        {
+            "q": "Apakah pengambilan atribut bisa diwakilkan?",
+            "a": "Bisa, dengan membawa Surat Kuasa bermaterai Rp10.000, fotokopi KTP penerima kuasa, dan kwitansi asli pembayaran."
+        },
+        {
+            "q": "Apa saja yang didapatkan dalam paket atribut?",
+            "a": "Jas Almamater Unindra, Dasi Resmi, Pin/Bros Logo Unindra, Kaos Angkatan, dan Kartu Tanda Mahasiswa (KTM)."
+        }
+    ]
+}
