@@ -32,3 +32,10 @@ Semua catatan perubahan, rilis fitur, dan pembaruan sistem dicatat dalam dokumen
 #### ⏳ Modul Coming Soon & Perangkat Sistem
 - **Halaman Coming Soon**: Desain placeholder bersih dan kontras untuk modul **Open Recruitment (`/oprec`)** dan **Sisformerch (`/shop`)**.
 - **Dokumentasi & Konfigurasi**: Pembuatan file `ARCHITECTURE.md` dan `CHANGELOG.md`, serta konfigurasi `.gitignore` untuk proteksi file aset berskala besar.
+
+
+Changelog v1.1.0
+
+Struktur Pengurus 2025/2026: Menambahkan data dan foto pengurus baru untuk periode 2025/2026 pada divisi Koordinator & BPH, PSDM, serta PPPM.
+
+Asset Foto Pengurus: Memperbarui path dan file gambar formal serta pose untuk anggota divisi yang sudah lengkap (sementara Divisi Komwira menyusul menunggu kelengkapan foto).
