@@ -1,7 +1,17 @@
 {
     "version": 2,
+    "framework": null,
     "buildCommand": "npm run build",
     "outputDirectory": "public",
+    "builds": [
+        {
+            "src": "public/index.php",
+            "use": "@vercel/php",
+            "config": {
+                "awsLambdaCpu": 1024
+            }
+        }
+    ],
     "routes": [
         {
             "src": "/build/(.*)",
