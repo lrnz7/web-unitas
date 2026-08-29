@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: web-unitas-si
+    env: php
+    plan: free
+    buildCommand: "composer install --no-dev --optimize-autoloader && npm install && npm run build"
+    startCommand: "php artisan config:cache && php artisan route:cache && apache2-foreground"
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
