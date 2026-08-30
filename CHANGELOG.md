@@ -53,13 +53,13 @@ Asset Foto Pengurus: Memperbarui path dan file gambar formal serta pose untuk an
 - **Asset Foto & Efek Hover**: Memperbaiki path foto sekunder/pose serta menyempurnakan animasi *hover* berganti foto pada pengurus periode aktif tanpa ada elemen yang patah.
 
 #### 🌐 Navigasi & Tampilan Utama (`Navbar & Hero`)
-- **Perubahan CTA Hero**: Mengubah tombol aksi utama (*Call to Action*) di bagian *hero* halaman utama dari "Lihat Struktural Organisasi" menjadi "About Us"[cite: 1].
-- **Rebranding Menu Hubungi Kami**: Mengganti nama menu "Hubungi Kami" menjadi **"Partisipasi"**[cite: 1] sebagai pusat interaksi mahasiswa.
-- **Modul Partisipasi & Interaksi**: Memindahkan dan mewadahi fitur-fitur interaktif baru seperti *voting pilkoor* dan *open recruitment* (oprec) ke dalam kanal Partisipasi[cite: 1].
+- **Perubahan CTA Hero**: Mengubah tombol aksi utama (*Call to Action*) di bagian *hero* halaman utama dari "Lihat Struktural Organisasi" menjadi "About Us".
+- **Rebranding Menu Hubungi Kami**: Mengganti nama menu "Hubungi Kami" menjadi **"Partisipasi"** sebagai pusat interaksi mahasiswa.
+- **Modul Partisipasi & Interaksi**: Memindahkan dan mewadahi fitur-fitur interaktif baru seperti *voting pilkoor* dan *open recruitment* (oprec) ke dalam kanal Partisipasi.
 
 #### 📄 Integrasi Konten & Halaman Statis
-- **Integrasi Laman Informasi**: Memasukkan dan menyelaraskan data penting yang ditarik langsung dari laman informasi ke dalam struktur web[cite: 1].
-- **Perombakan About & Prodi**: Merombak total narasi serta tata letak pada halaman profil organisasi (*About Unitas*) dan profil Program Studi agar tampil lebih tajam dan representatif[cite: 1].
+- **Integrasi Laman Informasi**: Memasukkan dan menyelaraskan data penting yang ditarik langsung dari laman informasi ke dalam struktur web.
+- **Perombakan About & Prodi**: Merombak total narasi serta tata letak pada halaman profil organisasi (*About Unitas*) dan profil Program Studi agar tampil lebih tajam dan representatif.
 
 #### 📰 Modul Blog & Artikel
 - **Efek Hover Kartu Terkait**: Menambahkan animasi *hover* eksklusif (garis aksen biru dari atas, efek naik, dan bayangan *glow*) pada kartu "Artikel Terkait Lainnya" di halaman detail blog (`show.blade.php`).
@@ -67,7 +67,7 @@ Asset Foto Pengurus: Memperbarui path dan file gambar formal serta pose untuk an
 #### 🛠️ Desain Sistem Global & Footer Profesional
 - **Desain Sistem (`app.css`)**: Menambahkan kelas utilitas global untuk *glassmorphism* halus, *smooth scroll*, dan *scrollbar* minimalis yang konsisten di seluruh halaman.
 - **Perombakan Total Footer**: 
-  - Menghapus menu navigasi footer yang menumpuk[cite: 1].
-  - Menyematkan ikon media sosial resmi berbasis SVG murni khusus untuk **Instagram, TikTok, dan YouTube**[cite: 1].
-  - Mengaktifkan tautan langsung (*clickable*) ke nomor WhatsApp organisasi (`+6289638943275`) dan email resmi (`unitassi@unindra.ac.id`)[cite: 1].
-  - Memperbarui teks *copyright* menjadi `© 2025–2026 Unitas Sistem Informasi. All rights reserved.`[cite: 1] serta merapikan struktur tata letaknya menggunakan fleksibilitas murni agar sejajar sempurna.
+  - Menghapus menu navigasi footer yang menumpuk.
+  - Menyematkan ikon media sosial resmi berbasis SVG murni khusus untuk **Instagram, TikTok, dan YouTube**.
+  - Mengaktifkan tautan langsung (*clickable*) ke nomor WhatsApp organisasi (`+6289638943275`) dan email resmi (`unitassi@unindra.ac.id`).
+  - Memperbarui teks *copyright* menjadi `© 2025–2026 Unitas Sistem Informasi. All rights reserved.` serta merapikan struktur tata letaknya menggunakan fleksibilitas murni agar sejajar sempurna.
