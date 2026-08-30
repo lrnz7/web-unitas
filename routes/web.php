@@ -123,7 +123,7 @@ Route::prefix('events')->group(function () {
         return view('pages.events.index', compact('events'));
     });
 
-    // 2. Detail Event (Full Penjelasan + Galeri Khusus per Event)
+    // 2. Detail Event (Clean State Placeholder Default)
     Route::get('/{slug}', function ($slug) {
         $eventsPath = base_path('data/events.json');
         $events = file_exists($eventsPath) ? json_decode(file_get_contents($eventsPath), true) : [];
@@ -134,17 +134,23 @@ Route::prefix('events')->group(function () {
             abort(404);
         }
 
-        return view('pages.events.show', compact('event'));
+        // Default $photos dibuat array kosong [] agar konsisten clean
+        $photos = [];
+
+        return view('pages.events.show', compact('event', 'photos'));
     });
 
 });
 
-// Route Group: Kontak & Layanan
+// Route Group: Partisipasi & Layanan Mahasiswa
 Route::prefix('kontak')->group(function () {
 
     // 1. Hubungi Kami
     Route::get('/', function () {
-        return view('pages.kontak.index');
+        $kontakPath = base_path('data/kontak.json');
+        $kontakData = file_exists($kontakPath) ? json_decode(file_get_contents($kontakPath), true) : [];
+
+        return view('pages.kontak.index', compact('kontakData'));
     });
 
     // 2. Tulis Aspirasi
@@ -189,6 +195,14 @@ Route::prefix('blog')->group(function () {
 
 });
 
+// Route: E-Voting Pilkoor (Coming Soon)
+Route::get('/voting', function () {
+    return view('pages.coming-soon', [
+        'title' => 'E-Voting Pilkoor',
+        'subtitle' => 'Pemungutan suara online transparan dan terverifikasi untuk pemilihan Koordinator Unitas SI akan segera dimulai.'
+    ]);
+});
+
 // Route: Open Recruitment (Coming Soon)
 Route::get('/oprec', function () {
     return view('pages.coming-soon', [
@@ -203,27 +217,4 @@ Route::get('/shop', function () {
         'title' => 'Sisformerch',
         'subtitle' => 'Official Merchandise resmi Unitas Sistem Informasi sedang dalam tahap persiapan katalog.'
     ]);
-});
-
-// Route Group: Kontak & Layanan Interaktif
-Route::prefix('kontak')->group(function () {
-
-    // 1. Hubungi Kami
-    Route::get('/', function () {
-        $kontakPath = base_path('data/kontak.json');
-        $kontakData = file_exists($kontakPath) ? json_decode(file_get_contents($kontakPath), true) : [];
-
-        return view('pages.kontak.index', compact('kontakData'));
-    });
-
-    // 2. Tulis Aspirasi
-    Route::get('/aspirasi', function () {
-        return view('pages.kontak.aspirasi');
-    });
-
-    // 3. Tulis Artikel
-    Route::get('/tulis-artikel', function () {
-        return view('pages.kontak.tulis-artikel');
-    });
-
 });

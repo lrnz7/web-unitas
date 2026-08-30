@@ -6,12 +6,12 @@
     "alt": "Logo Unitas SI"
   },
   "about": {
-    "label": "ABOUT US",
-    "title": "Unitas\nSistem\nInformasi",
-    "description": "Unit Aktivitas Mahasiswa Sistem Informasi merupakan salah satu organisasi yang berada di bawah Fakultas Teknik dan Ilmu Komputer Universitas Indraprasta PGRI. Keberadaannya berfungsi sebagai wadah pengembangan potensi, kreativitas, dan aspirasi mahasiswa, khususnya di lingkup Program Studi Sistem Informasi.",
-    "cta_text": "Explore More",
-    "cta_url": "/about/unitas",
-    "logo": "images/logo-unitas.svg"
+    "label": "PROGRAM STUDI",
+    "title": "Program\nStudi Sistem\nInformasi",
+    "description": "Program Studi Sistem Informasi Universitas Indraprasta PGRI membekali mahasiswa dengan kemampuan analitis, perancangan sistem, dan penguasaan teknologi terkini guna menjawab tantangan industri digital modern yang dinamis dan kompetitif.",
+    "cta_text": "Pelajari Selengkapnya",
+    "cta_url": "/about/prodi",
+    "logo": "images/logo-prodi.png"
   },
   "hero": {
     "badge": "Unitas Sistem Informasi",
@@ -19,8 +19,8 @@
     "tagline": "Wadah kreasi, inovasi, kolaborasi, dan pengembangan teknologi mahasiswa Sistem Informasi.",
     "bg_image": "images/IMG_5225.JPG",
     "cta_primary": {
-      "text": "Struktural Organisasi",
-      "url": "/about/struktural"
+      "text": "About Us",
+      "url": "/about/unitas"
     }
   },
   "navigation": [
@@ -33,15 +33,15 @@
       "url": "/about/unitas",
       "dropdown": [
         {
-          "name": "Tentang Unitas",
+          "name": "Unitas Sistem Informasi",
           "url": "/about/unitas"
         },
         {
-          "name": "Tentang Program Studi",
+          "name": "Program Studi Sistem Informasi",
           "url": "/about/prodi"
         },
         {
-          "name": "Struktur Organisasi",
+          "name": "Struktural Organisasi",
           "url": "/about/struktural"
         }
       ]
@@ -73,20 +73,20 @@
       "url": "/blog"
     },
     {
-      "name": "Open Recruitment",
-      "url": "/oprec"
+      "name": "Voting Pilkoor",
+      "url": "/voting"
     },
     {
       "name": "Sisformerch",
       "url": "/shop"
     },
     {
-      "name": "Kontak",
-      "url": "/kontak",
+      "name": "Partisipasi",
+      "url": "/oprec",
       "dropdown": [
         {
-          "name": "Hubungi Kami",
-          "url": "/kontak"
+          "name": "Open Recruitment Unitas SI",
+          "url": "/oprec"
         },
         {
           "name": "Tulis Aspirasi",
@@ -161,21 +161,24 @@
       "title": "SISFORMERCH",
       "description": "Merchandise resmi dan produk inovasi Unitas Sistem Informasi.",
       "icon": "/assets/images/sisformerch-logo.png",
+      "bg_image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80",
       "link": "/shop"
     },
     {
-      "id": "blog",
-      "title": "BLOG",
-      "description": "Kumpulan informasi, tutorial, dan kabar seputar Unitas & Kampus.",
-      "icon": "/assets/images/blog-logo.png",
-      "link": "/blog"
+      "id": "e-voting",
+      "title": "E-VOTING PILKOOR",
+      "description": "Pemungutan suara online transparan dan terverifikasi untuk pemilihan Koordinator Unitas SI.",
+      "icon": "/assets/images/voting-logo.png",
+      "bg_image": "https://images.unsplash.com/photo-1616461504551-d78b2015d95a?auto=format&fit=crop&w=600&q=80",
+      "link": "/voting"
     },
     {
-      "id": "open-recruitment",
-      "title": "OPEN RECRUITMENT",
-      "description": "Tertarik menjadi bagian dari Unitas Sistem Informasi? Cek informasi pendaftarannya!",
-      "icon": "/assets/images/oprec-logo.png",
-      "link": "/oprec"
+      "id": "event",
+      "title": "EVENT & KEGIATAN",
+      "description": "Jadwal kegiatan, seminar, workshop, hingga dokumentasi galeri keseruan acara Unitas SI.",
+      "icon": "/assets/images/event-logo.png",
+      "bg_image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=600&q=80",
+      "link": "/events"
     }
   ],
   "gallery": [

@@ -6,6 +6,7 @@
     <meta name="description" content="Website Resmi Unitas Sistem Informasi - Wadah kreasi, inovasi, dan kolaborasi mahasiswa Sistem Informasi.">
 
     <title>Unitas Sistem Informasi</title>
+    <link rel="icon" type="image/jpeg" href="{{ asset('favicon.jpg') }}">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,6 +44,9 @@
 
             <!-- 2. About Us Unitas -->
             <x-about-section />
+
+            <!-- 3. Informasi Akademis Grid -->
+            <x-academic-section />
 
             <!-- 4. Blog Terkini -->
             <x-blog-section />

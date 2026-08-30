@@ -43,35 +43,42 @@
         </div>
     </div>
 
-    {{-- Image Grid 3x3 --}}
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        @foreach($gallery as $item)
-            <div 
-                x-show="activeTab === '{{ $item['category'] }}'"
-                x-transition:enter="transition ease-out duration-300 transform opacity-0 scale-95"
-                x-transition:enter-end="transform opacity-100 scale-100"
-                class="group relative overflow-hidden rounded-2xl bg-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
-                
-                <img 
-                    src="{{ asset($item['image']) }}" 
-                    alt="{{ $item['title'] }}" 
-                    class="w-full h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                
-                {{-- Hover Overlay Info --}}
-                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <span class="text-white font-semibold text-xs md:text-sm">
-                        {{ $item['title'] }}
-                    </span>
+    {{-- Image Grid / Clean State Placeholder --}}
+    @if(!empty($gallery))
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            @foreach($gallery as $item)
+                <div 
+                    x-show="activeTab === '{{ $item['category'] }}'"
+                    x-transition:enter="transition ease-out duration-300 transform opacity-0 scale-95"
+                    x-transition:enter-end="transform opacity-100 scale-100"
+                    class="group relative overflow-hidden rounded-2xl bg-slate-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                    
+                    <img 
+                        src="{{ asset($item['image']) }}" 
+                        alt="{{ $item['title'] }}" 
+                        class="w-full h-56 md:h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                    
+                    {{-- Hover Overlay Info --}}
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-semibold text-xs md:text-sm">
+                            {{ $item['title'] }}
+                        </span>
+                    </div>
                 </div>
-            </div>
-        @endforeach
-    </div>
+            @endforeach
+        </div>
+    @else
+        {{-- State Placeholder Rapi Saat Belum Ada Foto --}}
+        <div class="py-16 text-center text-slate-400 text-sm border border-dashed border-slate-200 rounded-3xl bg-white shadow-xs">
+            Belum ada foto dokumentasi kegiatan saat ini.
+        </div>
+    @endif
 
-    {{-- TOMBOL SEE MORE GALLERY (DIBALIKIN LAGI DI SINI) --}}
+    {{-- TOMBOL SEE MORE GALLERY --}}
     <div class="mt-12 text-center">
-        <a href="/#gallery" 
+        <a href="{{ url('/events') }}" 
            class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white border border-slate-200 text-[#334EAC] font-bold text-xs tracking-wider uppercase shadow-sm hover:shadow-md hover:bg-blue-50 transition-all duration-200">
-            See More Gallery
+            Lihat Semua Event
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>

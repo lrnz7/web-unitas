@@ -11,12 +11,12 @@
     }
 
     $about = $jsonData['about'] ?? [
-        'label'       => 'ABOUT US',
-        'title'       => "Unitas\nSistem\nInformasi",
-        'description' => 'Unit Aktivitas Mahasiswa Sistem Informasi merupakan salah satu organisasi yang berada di bawah Fakultas Teknik dan Ilmu Komputer Universitas Indraprasta PGRI. Keberadaannya berfungsi sebagai wadah pengembangan potensi, kreativitas, dan aspirasi mahasiswa, khususnya di lingkup Program Studi Sistem Informasi.',
-        'cta_text'    => 'Explore More',
-        'cta_url'     => '/#about',
-        'logo'        => 'images/logo-unitas.png',
+        'label'       => 'PROGRAM STUDI',
+        'title'       => "Program\nStudi Sistem\nInformasi",
+        'description' => 'Program Studi Sistem Informasi Universitas Indraprasta PGRI membekali mahasiswa dengan kemampuan analitis, perancangan sistem, dan penguasaan teknologi terkini guna menjawab tantangan industri digital modern yang dinamis dan kompetitif.',
+        'cta_text'    => 'Pelajari Selengkapnya',
+        'cta_url'     => '/about/prodi',
+        'logo'        => 'images/logo-prodi.png', // Nanti tinggal tarok file logo prodi di public/images/
     ];
 @endphp
 
@@ -48,39 +48,8 @@
 
             {{-- Description --}}
             <p class="mt-6 text-slate-600 text-sm md:text-base leading-relaxed max-w-xl">
-                <strong class="font-semibold text-slate-800">Unit Aktivitas Mahasiswa Sistem Informasi</strong>
-                {{ Str::after($about['description'], 'Unit Aktivitas Mahasiswa Sistem Informasi') }}
+                {{ $about['description'] }}
             </p>
-
-            {{-- ───── PROFIL SINGKAT KEPENGURUSAN ───── --}}
-            <div class="mt-8 pt-6 border-t border-slate-200/80 max-w-lg">
-                <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-4">
-                    Profil Singkat Kepengurusan:
-                </span>
-                
-                <div class="grid grid-cols-3 gap-6">
-                    {{-- Kolom 1: Tahun Berdiri --}}
-                    <div>
-                        <span class="block text-2xl md:text-3xl font-black text-[#334EAC] tracking-tight">2024</span>
-                        <span class="text-xs font-semibold text-slate-800 block mt-1">Tahun Berdiri</span>
-                        <span class="text-[10px] text-slate-400 font-medium">Awal Perjalanan</span>
-                    </div>
-
-                    {{-- Kolom 2: Jumlah Pengurus --}}
-                    <div>
-                        <span class="block text-2xl md:text-3xl font-black text-[#334EAC] tracking-tight">18</span>
-                        <span class="text-xs font-semibold text-slate-800 block mt-1">Pengurus</span>
-                        <span class="text-[10px] text-slate-400 font-medium">Anggota Aktif</span>
-                    </div>
-
-                    {{-- Kolom 3: Jumlah Divisi --}}
-                    <div>
-                        <span class="block text-2xl md:text-3xl font-black text-[#334EAC] tracking-tight">03</span>
-                        <span class="text-xs font-semibold text-slate-800 block mt-1">Divisi</span>
-                        <span class="text-[10px] text-slate-400 font-medium">Operasional</span>
-                    </div>
-                </div>
-            </div>
 
             {{-- CTA Button --}}
             <a href="{{ $about['cta_url'] }}"
@@ -96,11 +65,11 @@
             <div class="absolute -right-24 top-1/2 -translate-y-1/2 w-[450px] h-[450px] bg-gradient-to-l from-[#BAD6EB]/35 to-transparent pointer-events-none -z-10" style="clip-path: polygon(100% 0, 0 50%, 100% 100%);"></div>
 
             {{-- Clean Interactive Logo Link --}}
-            <a href="/filosofi-logo" 
+            <a href="/about/prodi" 
                class="group relative block p-2 transition-transform duration-300 transform hover:scale-105 focus:outline-none" 
-               title="Klik untuk lihat Filosofi Logo Unitas SI">
+               title="Program Studi Sistem Informasi Unindra">
                 <img src="{{ asset($about['logo']) }}"
-                     alt="Logo Unitas SI"
+                     alt="Logo Prodi Sistem Informasi"
                      class="w-64 h-64 md:w-80 md:h-80 lg:w-[360px] lg:h-[360px] object-contain drop-shadow-sm group-hover:drop-shadow-lg transition-all duration-300">
             </a>
         </div>

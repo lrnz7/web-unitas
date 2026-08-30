@@ -33,7 +33,7 @@
     <article class="group/card relative w-full min-h-[580px] lg:min-h-[620px] rounded-3xl overflow-hidden shadow-2xl shadow-blue-950/20 border border-slate-200/50 flex items-center justify-center text-center bg-[#072B63]">
         
         {{-- Background Image --}}
-        <img src="{{ asset('images/IMG_5225.JPG') }}"
+        <img src="{{ asset('images/IMG-20260823-WA0068.jpg') }}"
              alt="Foto Dokumentasi Unitas Sistem Informasi"
              class="absolute inset-0 w-full h-full object-cover object-center z-0 scale-100 transition-transform duration-700 ease-out group-hover/card:scale-105"
              onerror="this.src='https://placehold.co/1200x600/072B63/FFF?text=Unitas+Sistem+Informasi'">
@@ -56,9 +56,9 @@
 
             {{-- CTA Button Group --}}
             <nav class="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4" aria-label="Aksi Cepat Hero">
-                <a href="{{ url('/about/struktural') }}"
+                <a href="{{ url('/about/unitas') }}"
                    class="px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-white/20 border border-white/40 backdrop-blur-md hover:bg-white hover:text-[#072B63] hover:border-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
-                    Struktural Organisasi
+                    About Us
                 </a>
             </nav>
         </div>

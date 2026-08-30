@@ -26,7 +26,7 @@
 
     <x-navbar />
 
-    <main class="flex-1 py-12 px-6 max-w-7xl mx-auto w-full space-y-12" x-data="{ activeTab: 'kurikulum' }">
+    <main class="flex-1 py-16 px-6 max-w-7xl mx-auto w-full space-y-12" x-data="{ activeTab: 'kurikulum' }">
         
         <!-- Header Section (Clean) -->
         <section class="text-center space-y-3">
@@ -70,10 +70,13 @@
                 @foreach($curriculum as $sem)
                     @php $totalSksSemester = collect($sem['courses'])->sum('total_sks'); @endphp
                     
-                    <div class="rounded-3xl border-2 border-slate-200/80 bg-white shadow-xs hover:border-blue-300 transition-all overflow-hidden">
+                    <!-- Card Semester dengan Efek Hover Premium -->
+                    <div class="relative overflow-hidden rounded-3xl bg-white border border-slate-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 hover:border-[#334EAC] group flex flex-col">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-[#334EAC] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+
                         <!-- Header Card Semester -->
-                        <div class="px-7 py-5 flex items-center justify-between border-b bg-slate-50 border-slate-100">
-                            <h3 class="text-lg font-black tracking-tight uppercase text-slate-900">
+                        <div class="px-7 py-5 flex items-center justify-between border-b bg-slate-50 border-slate-100 relative z-10">
+                            <h3 class="text-lg font-black tracking-tight uppercase text-slate-900 group-hover:text-[#334EAC] transition-colors">
                                 Semester {{ $sem['semester'] }}
                             </h3>
                             <span class="text-xs font-extrabold px-3.5 py-1.5 rounded-full bg-blue-50 text-[#334EAC] border border-blue-100">
@@ -82,7 +85,7 @@
                         </div>
 
                         <!-- Table -->
-                        <div class="p-5 overflow-x-auto">
+                        <div class="p-5 overflow-x-auto relative z-10">
                             <table class="w-full text-left border-collapse">
                                 <thead>
                                     <tr class="text-[11px] font-black uppercase text-slate-400 border-b border-slate-100">
@@ -122,7 +125,7 @@
                         </div>
 
                         <!-- Slot Modul / Materi perkuliahan -->
-                        <div class="px-6 py-3.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between text-xs">
+                        <div class="px-6 py-3.5 bg-slate-50/80 border-t border-slate-100 flex items-center justify-between text-xs relative z-10 mt-auto">
                             <span class="text-slate-500 font-medium">Materi Perkuliahan Semester {{ $sem['semester'] }}</span>
                             <span class="font-bold text-[#334EAC] cursor-not-allowed opacity-60" title="Akan segera hadir">
                                 Download Modul (Soon) &rarr;
@@ -133,39 +136,40 @@
             </div>
         </section>
 
-        <!-- TAB 2: PANDUAN KRS -->
-        <section x-show="activeTab === 'krs'" x-transition class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-xs space-y-8">
-            <div class="border-b border-slate-100 pb-6">
-                <h2 class="text-2xl font-black text-slate-900">{{ $akademisData['krs']['title'] ?? 'Panduan KRS' }}</h2>
+        <!-- TAB 2: PANDUAN KRS (Frameless & Hover Cards) -->
+        <section x-show="activeTab === 'krs'" x-transition class="space-y-8">
+            <div class="border-b border-slate-200 pb-6">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">{{ $akademisData['krs']['title'] ?? 'Panduan KRS' }}</h2>
                 <p class="text-slate-500 text-sm mt-1">{{ $akademisData['krs']['description'] ?? '' }}</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach(($akademisData['krs']['timeline'] ?? []) as $step)
-                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3 relative overflow-hidden">
-                        <span class="text-3xl font-black text-blue-200 absolute right-4 top-2 select-none">0{{ $step['step'] }}</span>
-                        <h3 class="font-extrabold text-slate-900 text-base relative z-10">{{ $step['title'] }}</h3>
-                        <p class="text-xs text-slate-600 leading-relaxed relative z-10">{{ $step['desc'] }}</p>
+                    <div class="relative overflow-hidden p-6 rounded-2xl bg-white border border-slate-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 hover:border-[#334EAC] group space-y-3 cursor-default">
+                        <div class="absolute top-0 left-0 w-full h-1.5 bg-[#334EAC] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+                        <span class="text-3xl font-black text-blue-200 absolute right-4 top-2 select-none z-10">0{{ $step['step'] }}</span>
+                        <h3 class="font-extrabold text-slate-900 text-base relative z-10 group-hover:text-[#334EAC] transition-colors">{{ $step['title'] }}</h3>
+                        <p class="text-xs text-slate-500 leading-relaxed relative z-10">{{ $step['desc'] }}</p>
                     </div>
                 @endforeach
             </div>
 
             <div class="pt-4 text-center">
-                <a href="{{ $akademisData['krs']['portal_url'] ?? '#' }}" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#334EAC] hover:bg-blue-800 text-white font-extrabold text-sm transition-all shadow-md">
+                <a href="{{ $akademisData['krs']['https://mahasiswa.unindra.civitas.id/dashboard'] ?? '#' }}" target="_blank" class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#334EAC] hover:bg-blue-800 text-white font-extrabold text-sm transition-all shadow-md">
                     <span>Akses Portal SIKA Unindra</span>
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
             </div>
         </section>
 
-        <!-- TAB 3: BIAYA PERKULIAHAN -->
-        <section x-show="activeTab === 'biaya'" x-transition class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-xs space-y-8">
-            <div class="border-b border-slate-100 pb-6">
-                <h2 class="text-2xl font-black text-slate-900">{{ $akademisData['biaya']['title'] ?? 'Biaya Perkuliahan' }}</h2>
+        <!-- TAB 3: BIAYA PERKULIAHAN (Frameless) -->
+        <section x-show="activeTab === 'biaya'" x-transition class="space-y-8">
+            <div class="border-b border-slate-200 pb-6">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">{{ $akademisData['biaya']['title'] ?? 'Biaya Perkuliahan' }}</h2>
                 <p class="text-slate-500 text-sm mt-1">{{ $akademisData['biaya']['description'] ?? '' }}</p>
             </div>
 
-            <div class="overflow-x-auto">
+            <div class="overflow-x-auto bg-white rounded-3xl border border-slate-200 p-6 shadow-xs">
                 <table class="w-full text-left border-collapse">
                     <thead>
                         <tr class="text-xs font-black uppercase text-slate-400 border-b border-slate-200 pb-3">
@@ -194,21 +198,23 @@
             </div>
         </section>
 
-        <!-- TAB 4: ATURAN UJIAN -->
-        <section x-show="activeTab === 'ujian'" x-transition class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-xs space-y-6">
-            <div class="border-b border-slate-100 pb-6">
-                <h2 class="text-2xl font-black text-slate-900">{{ $akademisData['ujian']['title'] ?? 'Ketentuan Ujian' }}</h2>
+        <!-- TAB 4: ATURAN UJIAN (Frameless) -->
+        <section x-show="activeTab === 'ujian'" x-transition class="space-y-6">
+            <div class="border-b border-slate-200 pb-6">
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">{{ $akademisData['ujian']['title'] ?? 'Ketentuan Ujian' }}</h2>
                 <p class="text-slate-500 text-sm mt-1">{{ $akademisData['ujian']['description'] ?? '' }}</p>
             </div>
 
-            <ul class="space-y-3">
-                @foreach(($akademisData['ujian']['rules'] ?? []) as $rule)
-                    <li class="flex items-start gap-3 text-sm text-slate-700 font-medium">
-                        <span class="w-6 h-6 rounded-full bg-blue-100 text-[#334EAC] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">&check;</span>
-                        <span class="leading-relaxed">{{ $rule }}</span>
-                    </li>
-                @endforeach
-            </ul>
+            <div class="bg-white rounded-3xl border border-slate-200 p-8 shadow-xs">
+                <ul class="space-y-4">
+                    @foreach(($akademisData['ujian']['rules'] ?? []) as $rule)
+                        <li class="flex items-start gap-3 text-sm text-slate-700 font-medium">
+                            <span class="w-6 h-6 rounded-full bg-blue-100 text-[#334EAC] flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">&check;</span>
+                            <span class="leading-relaxed">{{ $rule }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </section>
 
     </main>

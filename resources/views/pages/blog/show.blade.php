@@ -58,7 +58,7 @@
             </div>
         </article>
 
-        <!-- Rekomendasi Artikel Lain -->
+<!-- Rekomendasi Artikel Lain -->
         @if(!empty($relatedPosts))
             <section class="space-y-6 pt-6">
                 <div class="border-b border-slate-200 pb-4">
@@ -67,11 +67,17 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     @foreach($relatedPosts as $rel)
-                        <a href="{{ url('/blog/' . $rel['slug']) }}" class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs hover:border-blue-300 transition-all space-y-2 block group">
-                            <span class="text-[10px] font-black text-[#334EAC] uppercase">{{ $rel['category'] }}</span>
-                            <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-[#334EAC] transition-colors line-clamp-2">
-                                {{ $rel['title'] }}
-                            </h3>
+                        <a href="{{ url('/blog/' . $rel['slug']) }}" class="group relative overflow-hidden bg-white rounded-2xl border border-slate-200 p-5 shadow-xs transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-blue-500/20 hover:border-[#334EAC] space-y-3 block">
+                            
+                            {{-- Garis Aksen Hover Bergerak dari Atas --}}
+                            <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-[#334EAC] origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+
+                            <div class="relative z-10 space-y-2">
+                                <span class="text-[10px] font-black text-[#334EAC] uppercase tracking-wider block">{{ $rel['category'] }}</span>
+                                <h3 class="text-sm font-extrabold text-slate-900 group-hover:text-[#334EAC] transition-colors line-clamp-2">
+                                    {{ $rel['title'] }}
+                                </h3>
+                            </div>
                         </a>
                     @endforeach
                 </div>
