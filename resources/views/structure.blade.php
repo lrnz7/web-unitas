@@ -286,8 +286,8 @@
                                 @endforeach
                             </div>
 
-                            {{-- Jajaran BPH (Grid di bawahnya) --}}
-                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-start">
+                            {{-- Jajaran BPH (Grid 4 kolom khusus untuk 2025-2026 agar sejajar rata, 2026-2027 menyesuaikan) --}}
+                            <div class="grid grid-cols-1 sm:grid-cols-2 {{ $pKey === '2025-2026' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }} gap-6 items-start">
                                 @foreach($members as $m)
                                     @if($m['division'] === 'koordinator' && $m['role'] !== 'Koordinator')
                                         <div class="group bg-white rounded-3xl p-6 border border-slate-200 shadow-md hover:shadow-2xl hover:shadow-blue-500/20 hover:border-[#334EAC] transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
