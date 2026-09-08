@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('role'); // cth: 'Koordinator', 'Anggota PSDM'
             $table->string('name'); // cth: 'Lorenzo Calvin'
             $table->string('photo_primary'); // path foto formal
-            $table->string('photo_secondary'); // path foto pose
+            $table->string('photo_secondary')->nullable(); // path foto pose (dibuat nullable biar aman)
             $table->json('tupoksi')->nullable(); // format JSON
             $table->timestamps();
         });

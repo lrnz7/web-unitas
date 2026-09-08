@@ -16,7 +16,7 @@
 
     <x-navbar />
 
-    <main class="flex-1 py-12 px-6 max-w-4xl mx-auto w-full space-y-8" x-data="{ submitted: false }">
+    <main class="flex-1 py-12 px-6 max-w-4xl mx-auto w-full space-y-8">
         
         <div class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-xs space-y-8">
             
@@ -32,66 +32,77 @@
                 </p>
             </div>
 
-            <template x-if="!submitted">
-                <form @submit.prevent="submitted = true" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-slate-700">Nama Penulis *</label>
-                            <input type="text" required placeholder="Nama lengkap kamu" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
-                        </div>
+            <!-- Flash Alert Sukses -->
+            @if(session('success'))
+                <div class="p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold rounded-2xl text-center">
+                    🎉 {{ session('success') }}
+                </div>
+            @endif
 
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-slate-700">NPM *</label>
-                            <input type="text" required placeholder="Contoh: 20244350..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
-                        </div>
+            <!-- Flash Alert Error Global -->
+            @if($errors->any())
+                <div class="p-4 bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold rounded-2xl space-y-1">
+                    <p class="font-extrabold">Gagal Mengirim Artikel:</p>
+                    <ul class="list-disc list-inside font-medium">
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-slate-700">Email Aktif *</label>
-                            <input type="email" required placeholder="Konfirmasi persetujuan" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
-                        </div>
-                    </div>
+            <form action="{{ route('artikel.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+                @csrf
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-slate-700">Judul Artikel *</label>
-                            <input type="text" required placeholder="Contoh: Belajar Laravel dari Nol" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
-                        </div>
-
-                        <div class="space-y-1.5">
-                            <label class="text-xs font-bold text-slate-700">Kategori Artikel *</label>
-                            <select required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
-                                <option value="Tutorial">Tutorial</option>
-                                <option value="Opini">Opini / Isu Politik</option>
-                                <option value="Teknologi">Sains & Teknologi</option>
-                                <option value="Kegiatan">Kegiatan Kampus</option>
-                            </select>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Nama Penulis *</label>
+                        <input type="text" name="author_name" value="{{ old('author_name') }}" required placeholder="Nama lengkap kamu" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
                     </div>
 
                     <div class="space-y-1.5">
-                        <label class="text-xs font-bold text-slate-700">Isi Artikel / Draf Tulisan *</label>
-                        <textarea rows="8" required placeholder="Tuliskan artikel lengkapmu di sini..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]"></textarea>
+                        <label class="text-xs font-bold text-slate-700">NPM SI Unindra *</label>
+                        <input type="text" name="author_npm" value="{{ old('author_npm') }}" required placeholder="Contoh: 202433500123" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
+                    </div>
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold text-slate-700">Judul Artikel *</label>
+                    <input type="text" name="title" value="{{ old('title') }}" required placeholder="Contoh: Mengembangkan Sistem Informasi Modern" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold text-slate-700">Ringkasan Singkat (Excerpt)</label>
+                    <input type="text" name="excerpt" value="{{ old('excerpt') }}" placeholder="Ringkasan 1-2 kalimat untuk preview card..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">
+                </div>
+
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold text-slate-700">Isi Artikel / Draf Tulisan *</label>
+                    <textarea name="content" rows="10" required placeholder="Tuliskan artikel lengkapmu di sini..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#334EAC]">{{ old('content') }}</textarea>
+                </div>
+
+                <!-- 3 Slot Upload Gambar -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-100 pt-6">
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Foto Utama (Header) *</label>
+                        <input type="file" name="photo_primary" required accept="image/*" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-medium text-slate-700 focus:outline-none">
                     </div>
 
-                    <button type="submit" class="w-full py-3.5 rounded-full bg-[#334EAC] hover:bg-blue-800 text-white font-extrabold text-sm transition-all shadow-md">
-                        Kirim Draf Artikel untuk Peninjauan &rarr;
-                    </button>
-                </form>
-            </template>
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Foto Tengah (Opsional)</label>
+                        <input type="file" name="photo_secondary" accept="image/*" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-medium text-slate-700 focus:outline-none">
+                    </div>
 
-            <!-- Success State -->
-            <template x-if="submitted">
-                <div class="py-12 text-center space-y-4">
-                    <span class="text-4xl">📝</span>
-                    <h3 class="text-xl font-black text-slate-900">Artikel Berhasil Dikirim!</h3>
-                    <p class="text-xs text-slate-500 max-w-md mx-auto font-medium leading-relaxed">
-                        Tim redaksi Unitas SI akan meninjau tulisanmu. Jika disetujui, artikel akan langsung terbit di halaman Blog.
-                    </p>
-                    <button @click="submitted = false" class="px-6 py-2.5 rounded-full bg-slate-100 text-slate-800 font-bold text-xs hover:bg-slate-200 transition-all">
-                        Kirim Artikel Lain
-                    </button>
+                    <div class="space-y-1.5">
+                        <label class="text-xs font-bold text-slate-700">Foto Tambahan (Opsional)</label>
+                        <input type="file" name="photo_extra" accept="image/*" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2 text-xs font-medium text-slate-700 focus:outline-none">
+                    </div>
                 </div>
-            </template>
+
+                <button type="submit" class="w-full py-3.5 rounded-full bg-[#334EAC] hover:bg-blue-800 text-white font-extrabold text-sm transition-all shadow-md">
+                    Kirim Draf Artikel untuk Peninjauan &rarr;
+                </button>
+            </form>
 
         </div>
 

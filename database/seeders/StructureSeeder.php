@@ -35,34 +35,31 @@ class StructureSeeder extends Seeder
         // ==========================================
         $divs2024 = [
             'koordinator' => Division::create(['slug' => 'koordinator-24', 'name' => 'Koordinator & BPH']),
-            'psdm' => Division::create(['slug' => 'psdm-24', 'name' => 'PSDM']),
-            'komwira' => Division::create(['slug' => 'komwira-24', 'name' => 'Kewirausahaan']),
-            'kominfo' => Division::create(['slug' => 'kominfo-24', 'name' => 'Kominfo']),
+            'psdm'        => Division::create(['slug' => 'psdm-24', 'name' => 'PSDM']),
+            'komwira'     => Division::create(['slug' => 'komwira-24', 'name' => 'Kewirausahaan']),
+            'kominfo'     => Division::create(['slug' => 'kominfo-24', 'name' => 'Kominfo']),
         ];
 
         $members2024 = [
-            ["div" => "koordinator", "role" => "Koordinator", "name" => "M. Roihan Hidayatullah", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Memimpin jalannya organisasi periode 2024/2025."]],
-            ["div" => "koordinator", "role" => "Sekretaris", "name" => "Jane Janitra M.A", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Mengelola administrasi dan kesekretariatan."]],
-            ["div" => "koordinator", "role" => "Bendahara", "name" => "M. Asriel Amri", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Mengelola keuangan organisasi."]],
-
-            ["div" => "psdm", "role" => "Kepala Divisi PSDM", "name" => "Manda Christoffel Kowas", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Memimpin divisi PSDM."]],
-            ["div" => "psdm", "role" => "Anggota PSDM", "name" => "Narendro Ageng Winarsis", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Mengembangkan sumber daya manusia."]],
-
-            ["div" => "komwira", "role" => "Kepala Divisi Kewirausahaan", "name" => "Deden Taufiqurrahman", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Mengelola dana usaha organisasi."]],
-
-            ["div" => "kominfo", "role" => "Kepala Divisi Kominfo", "name" => "Fazri Aziz Siregar", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Mengelola media dan informasi."]],
-            ["div" => "kominfo", "role" => "Anggota Kominfo", "name" => "Naufal Rafi Mudzafar", "p1" => "images/pengurus/default-1.jpg", "p2" => "images/pengurus/default-2.jpg", "tupoksi" => ["Mendukung publikasi media organisasi."]],
+            ["div" => "koordinator", "role" => "Koordinator", "name" => "M. Roihan Hidayatullah", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Memimpin jalannya organisasi periode 2024/2025."]],
+            ["div" => "koordinator", "role" => "Sekretaris", "name" => "Jane Janitra M.A", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Mengelola administrasi dan kesekretariatan."]],
+            ["div" => "koordinator", "role" => "Bendahara", "name" => "M. Asriel Amri", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Mengelola keuangan organisasi."]],
+            ["div" => "psdm", "role" => "Kepala Divisi PSDM", "name" => "Manda Christoffel Kowas", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Memimpin divisi PSDM."]],
+            ["div" => "psdm", "role" => "Anggota PSDM", "name" => "Narendro Ageng Winarsis", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Mengembangkan sumber daya manusia."]],
+            ["div" => "komwira", "role" => "Kepala Divisi Kewirausahaan", "name" => "Deden Taufiqurrahman", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Mengelola dana usaha organisasi."]],
+            ["div" => "kominfo", "role" => "Kepala Divisi Kominfo", "name" => "Fazri Aziz Siregar", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Mengelola media dan informasi."]],
+            ["div" => "kominfo", "role" => "Anggota Kominfo", "name" => "Naufal Rafi Mudzafar", "p1" => "images/default-avatar.png", "p2" => null, "tupoksi" => ["Mendukung publikasi media organisasi."]],
         ];
 
         foreach ($members2024 as $m) {
             Member::create([
-                'period_id' => $period2024->id,
-                'division_id' => $divs2024[$m['div']]->id,
-                'role' => $m['role'],
-                'name' => $m['name'],
-                'photo_primary' => $m['p1'],
+                'period_id'       => $period2024->id,
+                'division_id'     => $divs2024[$m['div']]->id,
+                'role'            => $m['role'],
+                'name'            => $m['name'],
+                'photo_primary'   => $m['p1'],
                 'photo_secondary' => $m['p2'],
-                'tupoksi' => $m['tupoksi'],
+                'tupoksi'         => $m['tupoksi'],
             ]);
         }
 
@@ -71,9 +68,9 @@ class StructureSeeder extends Seeder
         // ==========================================
         $divs2025 = [
             'koordinator' => Division::create(['slug' => 'koordinator', 'name' => 'Koordinator & BPH']),
-            'psdm' => Division::create(['slug' => 'psdm', 'name' => 'PSDM']),
-            'komwira' => Division::create(['slug' => 'komwira', 'name' => 'KOMWIRA']),
-            'pppm' => Division::create(['slug' => 'pppm', 'name' => 'PPPM']),
+            'psdm'        => Division::create(['slug' => 'psdm', 'name' => 'PSDM']),
+            'komwira'     => Division::create(['slug' => 'komwira', 'name' => 'KOMWIRA']),
+            'pppm'        => Division::create(['slug' => 'pppm', 'name' => 'PPPM']),
         ];
 
         $members2025 = [
@@ -85,16 +82,16 @@ class StructureSeeder extends Seeder
             ["division" => "koordinator", "role" => "Bendahara", "name" => "Evi Solemah Ariyanti", "photo_primary" => "images/pengurus/2025/evi-1.jpg", "photo_secondary" => "images/pengurus/2025/evi-2.jpg", "tupoksi" => ["Mengelola keuangan organisasi secara transparan dan akuntabel.", "Menyusun anggaran pemasukan dan pengeluaran.", "Mencatat serta membuat pembukuan keuangan.", "Menyampaikan laporan keuangan secara berkala.", "Mengawasi penggunaan dana pada setiap kegiatan."]],
             
             // PSDM
-            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Syahrul Frimansyah", "photo_primary" => "images/pengurus/2025/syahrul-1.jpg", "photo_secondary" => "images/pengurus/2025/syahrul-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru.", "Menyediakan sarana pengembangan diri bagi anggota.", "Menyelenggarakan kokulikuler.", "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."]],
-            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Ade Aulia Rahman", "photo_primary" => "images/pengurus/2025/ade-1.jpg", "photo_secondary" => "images/pengurus/2025/ade-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru.", "Menyediakan sarana pengembangan diri bagi anggota.", "Menyelenggarakan kokulikuler.", "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."]],
-            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Ahmad Maulana Putra", "photo_primary" => "images/pengurus/2025/ahmad-1.jpg", "photo_secondary" => "images/pengurus/2025/ahmad-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru.", "Menyediakan sarana pengembangan diri bagi anggota.", "Menyelenggarakan kokulikuler.", "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."]],
-            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Lorenzo Calvin", "photo_primary" => "images/pengurus/2025/lorenzo-1.jpg", "photo_secondary" => "images/pengurus/2025/lorenzo-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru.", "Menyediakan sarana pengembangan diri bagi anggota.", "Menyelenggarakan kokulikuler.", "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."]],
-            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Muhamad Adriansyah", "photo_primary" => "images/pengurus/2025/adriansyah-1.jpg", "photo_secondary" => "images/pengurus/2025/adriansyah-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru.", "Menyediakan sarana pengembangan diri bagi anggota.", "Menyelenggarakan kokulikuler.", "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."]],
-            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Nevityas Puspakania", "photo_primary" => "images/pengurus/2025/nevityas-1.jpg", "photo_secondary" => "images/pengurus/2025/nevityas-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru.", "Menyediakan sarana pengembangan diri bagi anggota.", "Menyelenggarakan kokulikuler.", "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."]],
-            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Nur Azizah Riyanto", "photo_primary" => "images/pengurus/2025/azizah-1.jpg", "photo_secondary" => "images/pengurus/2025/azizah-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru.", "Menyediakan sarana pengembangan diri bagi anggota.", "Menyelenggarakan kokulikuler.", "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."]],
+            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Syahrul Frimansyah", "photo_primary" => "images/pengurus/2025/syahrul-1.jpg", "photo_secondary" => "images/pengurus/2025/syahrul-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru."]],
+            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Ade Aulia Rahman", "photo_primary" => "images/pengurus/2025/ade-1.jpg", "photo_secondary" => "images/pengurus/2025/ade-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru."]],
+            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Ahmad Maulana Putra", "photo_primary" => "images/pengurus/2025/ahmad-1.jpg", "photo_secondary" => "images/pengurus/2025/ahmad-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru."]],
+            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Lorenzo Calvin", "photo_primary" => "images/pengurus/2025/lorenzo-1.jpg", "photo_secondary" => "images/pengurus/2025/lorenzo-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru."]],
+            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Muhamad Adriansyah", "photo_primary" => "images/pengurus/2025/adriansyah-1.jpg", "photo_secondary" => "images/pengurus/2025/adriansyah-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru."]],
+            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Nevityas Puspakania", "photo_primary" => "images/pengurus/2025/nevityas-1.jpg", "photo_secondary" => "images/pengurus/2025/nevityas-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru."]],
+            ["division" => "psdm", "role" => "Anggota PSDM", "name" => "Nur Azizah Riyanto", "photo_primary" => "images/pengurus/2025/azizah-1.jpg", "photo_secondary" => "images/pengurus/2025/azizah-2.jpg", "tupoksi" => ["Mengelola proses perekrutan dan pembinaan anggota baru."]],
             
             // Komwira
-            ["division" => "komwira", "role" => "Anggota Komwira", "name" => "Maulidia Ramadhani Azahra", "photo_primary" => "images/pengurus/2025/maulidia-1.jpg", "photo_secondary" => "images/pengurus/2025/maulidia-2.jpg", "tupoksi" => ["Menyampaikan informasi organisasi kepada anggota maupun pihak luar.", "Mengelola media sosial dan platform komunikasi organisasi."]],
+            ["division" => "komwira", "role" => "Anggota Komwira", "name" => "Maulidia Ramadhani Azahra", "photo_primary" => "images/pengurus/2025/maulidia-1.jpg", "photo_secondary" => "images/pengurus/2025/maulidia-2.jpg", "tupoksi" => ["Menyampaikan informasi organisasi kepada anggota maupun pihak luar."]],
             ["division" => "komwira", "role" => "Anggota Komwira", "name" => "Diaz Bintang Ramadhan", "photo_primary" => "images/pengurus/2025/diaz-1.jpg", "photo_secondary" => "images/pengurus/2025/diaz-2.jpg", "tupoksi" => ["Menyampaikan informasi organisasi kepada anggota maupun pihak luar."]],
             ["division" => "komwira", "role" => "Anggota Komwira", "name" => "Helmy Fazri Julianto", "photo_primary" => "images/pengurus/2025/helmy-1.jpg", "photo_secondary" => "images/pengurus/2025/helmy-2.jpg", "tupoksi" => ["Menyampaikan informasi organisasi kepada anggota maupun pihak luar."]],
             ["division" => "komwira", "role" => "Anggota Komwira", "name" => "Herlina Nurul Sa'diah", "photo_primary" => "images/pengurus/2025/herlina-1.jpg", "photo_secondary" => "images/pengurus/2025/herlina-2.jpg", "tupoksi" => ["Menyampaikan informasi organisasi kepada anggota maupun pihak luar."]],
@@ -122,13 +119,56 @@ class StructureSeeder extends Seeder
 
         foreach ($members2025 as $member) {
             Member::create([
-                'period_id' => $period2025->id,
-                'division_id' => $divs2025[$member['division']]->id,
-                'role' => $member['role'],
-                'name' => $member['name'],
-                'photo_primary' => $member['photo_primary'],
+                'period_id'       => $period2025->id,
+                'division_id'     => $divs2025[$member['division']]->id,
+                'role'            => $member['role'],
+                'name'            => $member['name'],
+                'photo_primary'   => $member['photo_primary'],
                 'photo_secondary' => $member['photo_secondary'],
-                'tupoksi' => $member['tupoksi'],
+                'tupoksi'         => $member['tupoksi'],
+            ]);
+        }
+
+        // ==========================================
+        // 4. PERIODE 2026-2027 (MIGRASI DARI BLADE)
+        // ==========================================
+        $members2026 = [
+            // Koordinator & BPH
+            ['div' => 'koordinator', 'role' => 'Koordinator', 'name' => 'M. Daffa Athaya'],
+            ['div' => 'koordinator', 'role' => 'Wakil Koordinator', 'name' => 'M. Fathan Arbiansyah'],
+            ['div' => 'koordinator', 'role' => 'Sekretaris', 'name' => 'Syahla Asyifa Nova'],
+            ['div' => 'koordinator', 'role' => 'Bendahara', 'name' => 'Rahma Arsyita Saputri'],
+
+            // PSDM
+            ['div' => 'psdm', 'role' => 'Kepala Divisi PSDM', 'name' => 'Alferdo Khevel Lilo'],
+            ['div' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'Daffa Imam P'],
+            ['div' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'M. Ivan Satrio'],
+            ['div' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'Mutiara Aulia'],
+
+            // KOMWIRA
+            ['div' => 'komwira', 'role' => 'Kepala Divisi KOMWIRA', 'name' => 'Afif Faturrahmanudin'],
+            ['div' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Nabil Nur Syaban'],
+            ['div' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Ardita Putri Maharani'],
+            ['div' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'TB. Adam Santana'],
+            ['div' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Gilang Reihan'],
+
+            // PPPM
+            ['div' => 'pppm', 'role' => 'Kepala Divisi PPPM', 'name' => 'Wardatun Nazwa Rohmah'],
+            ['div' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Aldea Salwa Nur Safitri'],
+            ['div' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Andhika Ricky'],
+            ['div' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Rapiza Akbar'],
+            ['div' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Ferdy Irmansyah'],
+        ];
+
+        foreach ($members2026 as $m) {
+            Member::create([
+                'period_id'       => $period2026->id,
+                'division_id'     => $divs2025[$m['div']]->id,
+                'role'            => $m['role'],
+                'name'            => $m['name'],
+                'photo_primary'   => 'images/default-avatar.png',
+                'photo_secondary' => null,
+                'tupoksi'         => [],
             ]);
         }
     }

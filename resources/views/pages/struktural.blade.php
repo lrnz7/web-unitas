@@ -24,13 +24,13 @@
         }
     </style>
 </head>
-<body class="w-full min-h-screen bg-slate-50 text-slate-800 antialiased flex flex-col selection:bg-[#334EAC] selection:text-white">
+<body class="w-full min-h-screen bg-slate-950 text-slate-100 antialiased flex flex-col selection:bg-[#334EAC] selection:text-white">
 
     <!-- Navbar Component -->
     <x-navbar />
 
     <!-- Main Content khusus Struktural -->
-    <main class="flex-1 py-12">
+    <main class="w-full flex-1">
         @include('structure')
     </main>
 
