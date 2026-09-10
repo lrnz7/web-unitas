@@ -71,3 +71,37 @@ Asset Foto Pengurus: Memperbarui path dan file gambar formal serta pose untuk an
   - Menyematkan ikon media sosial resmi berbasis SVG murni khusus untuk **Instagram, TikTok, dan YouTube**[cite: 1].
   - Mengaktifkan tautan langsung (*clickable*) ke nomor WhatsApp organisasi (`+6289638943275`) dan email resmi (`unitassi@unindra.ac.id`)[cite: 1].
   - Memperbarui teks *copyright* menjadi `© 2025–2026 Unitas Sistem Informasi. All rights reserved.`[cite: 1] serta merapikan struktur tata letaknya menggunakan fleksibilitas murni agar sejajar sempurna.
+
+## [2.2.0] - 2026-09-10
+
+### 🛠️ Refactoring Struktural & Desain Visual
+
+#### 🏛️ Halaman Struktural Organisasi (`/struktur`)
+- **Refactoring Layout**: Melakukan refactoring total pada struktur layout halaman untuk periode 2025–2026 dan 2026–2027. CSS dan logika Alpine.js disederhanakan untuk menghilangkan kompleksitas dan memperbaiki *rendering* tampilan.
+- **Perubahan Dasar Layout**:
+  - Wrapper utama diubah menjadi `bg-transparent` dan `relative` untuk menghilangkan lapisan latar belakang `bg-slate-950` yang menyebabkan duplikasi visual dan menimpa *background* divisual.
+  - Lapisan gambar latar belakang (Layer 1) dan *scrim* (Layer 2) di-upgrade menjadi elemen dengan `z-0` (lapisan terbawah) dan sepenuhnya menggunakan `fixed inset-0`. Sebelumnya, *scrim* menggunakan `z-10` dan elemen *wrapper* tidak memiliki `z-index`, menyebabkan konflik visual dengan *fixed background*.
+- **Perbaikan Visual & Z-Index**:
+  - Menambahkan logika `x-show` yang didorong ke lapisan paling dalam (Lapisan 1 dan 2) agar *background* dan *scrim* dapat merender dengan benar tanpa terhalang oleh elemen konten (`relative z-10`).
+  - Menambahkan penanganan `onerror` pada elemen `<img>` untuk menampilkan *placeholder* gambar jika file aset tidak ditemukan, mencegah elemen menjadi hilang atau patah.
+
+#### 🎨 Gaya & Estetika (`app.css`)
+- **Desain Ulang Hero Section**:
+  - Mengganti warna `hero-glass-container` dari transparan menjadi biru tua (`bg-blue-950/40`) untuk menciptakan kontras yang lebih tajam dan mewah terhadap *background* foto yang cerah.
+  - Menghapus *scrollbar* bawaan sistem (`scrollbar-hide`) secara global. Sebelumnya, *scrollbar* tersembunyi hanya di elemen-elemen tertentu, namun sekarang diterapkan di seluruh tubuh halaman untuk menciptakan estetika visual yang lebih bersih dan konsisten.
+  - **Modern Dual-Layer Drop Shadow**: Penggunaan teknik `.text-clean-readable` untuk menghadirkan tipografi tajam, estetik, dan mudah dibaca di atas background dengan tekstur ramai.
+  - **Master Glass Containment**: Pembungkusan kelompok header, dropdown periode, filter divisi, dan tupoksi ke dalam single glass container (`bg-slate-900/60 backdrop-blur-md rounded-3xl`) guna meningkatkan visual density.
+  - **Micro-interaction & Layout Fixes**: Meringkas format label periode menjadi versi modern (2025/26), serta membersihkan whitespace/seam di bawah header agar alur layout seamless.
+
+
+#### 🛡️ Admin Panel, Auth & Keamanan
+- **Authentication Middleware**: Mengamankan seluruh grup rute /admin menggunakan middleware auth.
+- **Credential System**: Penambahan halaman login (/login), AuthController.php, dan AdminSeeder.php untuk manajemen akun administrator.
+- **Konsistensi Sidebar UI**: Menyamakan struktur <nav> di seluruh view admin (Dashboard, Submissions, Articles, Events, Members) lengkap dengan kontrol tombol Logout.
+
+#### 💾 Backend, Arsitektur Data & CMS
+- **Full Structural Persistence**: Migrasi seluruh data pengurus periode 2024/2025, 2025/2026 (34 anggota asli), dan 2026/2027 ke database via StructureSeeder.php.
+- **Dual-Path Asset Logic**: Integrasi foto statis (public/images/pengurus/) dan foto dinamis (storage/members/) tanpa memutus fitur hover pose.
+- **Admin Filter Periode**: Penambahan dropdown filter periode di /admin/members untuk efisiensi tabel pengurus.
+- **Unifikasi Artikel (Hybrid Blog System)**: Penggabungan data artikel database dengan legacy blog.json, perbaikan kalkulasi read_time, dan otomatisasi URL slug unik.
+- **File-Based Event Management**: Implementasi sistem CRUD penuh untuk events.json via /admin/events, termasuk update foto cover dan link Google Drive dokumentasi.

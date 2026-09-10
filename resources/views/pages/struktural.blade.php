@@ -35,7 +35,7 @@
     </main>
 
     <!-- Footer Component -->
-    <x-footer />
+    <x-footer variant="dark" />
 
 </body>
 </html>

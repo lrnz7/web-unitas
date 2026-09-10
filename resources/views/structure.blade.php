@@ -118,7 +118,7 @@
     ];
 @endphp
 
-<!-- CUSTOM CSS UNTUK SHADOW & FIXED VIEWPORT COVERAGE -->
+<!-- CUSTOM CSS UNTUK SHADOW & SMOOTH SCRIM -->
 <style>
     .text-clean-readable {
         color: #ffffff;
@@ -137,8 +137,8 @@
     }
 </style>
 
-<!-- WRAPPER UTAMA (Kembali ke relative w-full min-h-screen) -->
-<div class="relative w-full min-h-screen bg-slate-950 text-slate-100 overflow-hidden" 
+<!-- WRAPPER UTAMA (bg-transparent agar tidak menimpa layer background fixed) -->
+<div class="relative w-full min-h-screen bg-transparent text-slate-100" 
      id="struktur" 
      x-data="{ 
         selectedPeriod: '{{ $defaultPeriod }}', 
@@ -147,9 +147,9 @@
      }"
      x-init="$watch('selectedPeriod', value => { activeDiv = 'koordinator'; })">
 
-    <!-- LAYER 1: FIXED BACKGROUND IMAGE (Memakai fixed inset-0 agar full layar tanpa kepotong) -->
+    <!-- LAYER 1: FIXED BACKGROUND IMAGE (z-0) -->
     <div x-show="selectedPeriod !== '2024-2025'" 
-         class="fixed inset-0 -z-20 pointer-events-none overflow-hidden" x-cloak>
+         class="fixed inset-0 z-0 pointer-events-none overflow-hidden" x-cloak>
         <template x-for="(divCovers, periodKey) in covers" :key="periodKey">
             <template x-for="(url, divKey) in divCovers" :key="divKey">
                 <div x-show="selectedPeriod === periodKey && activeDiv === divKey"
@@ -160,14 +160,17 @@
                      x-transition:leave-start="opacity-100"
                      x-transition:leave-end="opacity-0"
                      class="absolute inset-0 w-full h-full">
-                    <img :src="url" alt="Background Divisi" class="w-full h-full object-cover object-center">
+                    <img :src="url" 
+                         alt="Background Divisi" 
+                         class="w-full h-full object-cover object-center"
+                         onerror="this.src='https://placehold.co/1920x1080/0f172a/64748b?text=Cover+Missing'">
                 </div>
             </template>
         </template>
     </div>
 
-    <!-- LAYER 2: GLOBAL SMOOTH SCRIM (Fixed murni menutupi viewport) -->
-    <div class="fixed inset-0 -z-10 hero-smooth-scrim pointer-events-none"></div>
+    <!-- LAYER 2: GLOBAL SMOOTH SCRIM (z-0) -->
+    <div class="fixed inset-0 z-0 hero-smooth-scrim pointer-events-none"></div>
 
     <!-- CONTENT LAYER -->
     <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 pt-20 pb-32 space-y-12">
@@ -239,7 +242,6 @@
                 </div>
             @endforeach
         </div>
-
 
         {{-- ======================================================== --}}
         {{-- KONDISI B: LOGIC LAYOUT PERIODE 2025-2026 & 2026-2027 --}}
