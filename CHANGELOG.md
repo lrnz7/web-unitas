@@ -105,3 +105,34 @@ Asset Foto Pengurus: Memperbarui path dan file gambar formal serta pose untuk an
 - **Admin Filter Periode**: Penambahan dropdown filter periode di /admin/members untuk efisiensi tabel pengurus.
 - **Unifikasi Artikel (Hybrid Blog System)**: Penggabungan data artikel database dengan legacy blog.json, perbaikan kalkulasi read_time, dan otomatisasi URL slug unik.
 - **File-Based Event Management**: Implementasi sistem CRUD penuh untuk events.json via /admin/events, termasuk update foto cover dan link Google Drive dokumentasi.
+
+
+[2.3.0] - 2026-09-15
+🚀 Pembaruan Utama & Penyempurnaan Visual Struktural
+🏛️ Halaman Struktural Organisasi (/struktur)
+Standar Aspek Rasio Foto Latar Belakang (16:9):
+
+Melakukan migrasi dan penyesuaian total pada seluruh aset foto grup divisi/angkatan menggunakan aspek rasio 16:9 Landscape.
+
+Menghapus logika ambient blur di sisi kiri-kanan serta membuang mode object-contain yang sebelumnya sempat membuat tampilan tidak proporsional.
+
+Mengonfigurasi ulang elemen latar belakang menggunakan pendekatan full viewport display (object-cover object-center) yang memastikan foto grup tampil secara penuh, tajam, dan proporsional di berbagai ukuran layar desktop tanpa terpotong.
+
+Penyempurnaan Efek Glassmorphism:
+
+Mengubah tingkat transparansi dan efek buram pada kartu pengurus, kotak Tupoksi, serta tombol navigasi periode/divisi menjadi gaya transparan bening modern (menggunakan bg-slate-900/40 dan backdrop-blur-2xl dengan border tipis border-white/30).
+
+Penambahan teknik drop shadow pada teks dan elemen di dalam kartu untuk memastikan legibilitas tetap tajam dan kontras di atas latar belakang foto yang dinamis.
+
+Pemulihan Detail Tugas (Tupoksi Individu):
+
+Mengembalikan blok perulangan data Tupoksi individu untuk jajaran Badan Pengurus Harian (BPH) dan Koordinator yang sebelumnya sempat terlewat saat restrukturisasi komponen kartu.
+
+🎨 Desain Global & Komponen Pendukung
+Redesain Footer Komponen (footer.blade.php):
+
+Melakukan refactoring pada file komponen footer untuk varian light mode, mengubah basis inline CSS lama menjadi kelas utilitas Tailwind penuh.
+
+Menyerasikan gaya visual footer agar selaras dengan Navbar atas melalui penerapan glassmorphism bening (bg-white/80 backdrop-blur-xl).
+
+Menambahkan properti posisi relative z-20 secara eksplisit pada footer untuk mengatasi konflik z-index dengan lapisan latar belakang halaman utama.

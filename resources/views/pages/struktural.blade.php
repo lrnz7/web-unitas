@@ -16,15 +16,14 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <!-- Styles / Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         body {
             font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
         }
     </style>
 </head>
-<body class="w-full min-h-screen bg-slate-950 text-slate-100 antialiased flex flex-col selection:bg-[#334EAC] selection:text-white">
+<body class="w-full min-h-screen bg-slate-50 text-slate-800 antialiased flex flex-col selection:bg-[#334EAC] selection:text-white">
 
     <!-- Navbar Component -->
     <x-navbar />
@@ -35,7 +34,7 @@
     </main>
 
     <!-- Footer Component -->
-    <x-footer variant="dark" />
+    <x-footer variant="light" />
 
 </body>
 </html>

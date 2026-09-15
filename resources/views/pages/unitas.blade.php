@@ -13,8 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles / Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
         body { font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif; }
     </style>
@@ -55,6 +54,34 @@
             <!-- Kolom Kanan: Logo -->
             <div class="lg:col-span-5 flex justify-center lg:justify-end">
                 <img src="{{ asset('images/logo-unitas-si.png') }}" alt="Logo Unitas SI" class="w-64 h-64 md:w-80 md:h-80 object-contain">
+            </div>
+        </div>
+
+        {{-- VISI & MISI UNITAS SI (DIPINDAHKAN KE SINI) --}}
+        <div class="max-w-5xl space-y-8 pt-12 mt-16 border-t border-slate-200">
+            <div>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight mb-3">Visi</h2>
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed text-justify font-medium">
+                    Menjadi unit aktivitas mahasiswa sistem informasi yang berkualitas, inovatif, dan berdaya saing dalam bidang sistem informasi dan teknologi informasi, serta mampu memberikan manfaat bagi mahasiswa, alumni, dan masyarakat luas.
+                </p>
+            </div>
+
+            <div>
+                <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight mb-4">Misi</h2>
+                <ol class="space-y-3 text-sm md:text-base text-slate-600 leading-relaxed list-decimal list-inside font-medium">
+                    <li class="text-justify pl-1">
+                        Mengembangkan program kerja yang memfasilitasi kreativitas dan inovasi mahasiswa dalam bidang teknologi Informasi.
+                    </li>
+                    <li class="text-justify pl-1">
+                        Menyelenggarakan kegiatan kompetisi, seminar, dan workshop yang meningkatkan pengetahuan dan keterampilan mahasiswa dalam sistem informasi.
+                    </li>
+                    <li class="text-justify pl-1">
+                        Menyelenggarakan kegiatan kerja sama dengan perusahaan di bidang teknologi.
+                    </li>
+                    <li class="text-justify pl-1">
+                        Membangun budaya kekeluargaan dan solidaritas di dalam keluarga mahasiswa Sistem Informasi.
+                    </li>
+                </ol>
             </div>
         </div>
 
@@ -154,33 +181,6 @@
             </p>
         </div>
 
-{{-- 7. VISI & MISI UNITAS SI (FIXED PRECISE FORMAT) --}}
-        <div class="max-w-5xl space-y-8 pt-6 border-t border-slate-200">
-            <div>
-                <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight mb-3">Visi</h2>
-                <p class="text-sm md:text-base text-slate-600 leading-relaxed text-justify font-medium">
-                    Menjadi unit aktivitas mahasiswa sistem informasi yang berkualitas, inovatif, dan berdaya saing dalam bidang sistem informasi dan teknologi informasi, serta mampu memberikan manfaat bagi mahasiswa, alumni, dan masyarakat luas.
-                </p>
-            </div>
-
-            <div>
-                <h2 class="text-xl md:text-2xl font-bold text-slate-900 tracking-tight mb-4">Misi</h2>
-                <ol class="space-y-3 text-sm md:text-base text-slate-600 leading-relaxed list-decimal list-inside font-medium">
-                    <li class="text-justify pl-1">
-                        Mengembangkan program kerja yang memfasilitasi kreativitas dan inovasi mahasiswa dalam bidang teknologi informasi.
-                    </li>
-                    <li class="text-justify pl-1">
-                        Menyelenggarakan kegiatan kompetisi, seminar, dan workshop yang meningkatkan pengetahuan dan keterampilan mahasiswa dalam sistem informasi.
-                    </li>
-                    <li class="text-justify pl-1">
-                        Menyelenggarakan kegiatan kerja sama dengan perusahaan di bidang teknologi.
-                    </li>
-                    <li class="text-justify pl-1">
-                        Membangun budaya kekeluargaan dan solidaritas di dalam keluarga mahasiswa Sistem Informasi.
-                    </li>
-                </ol>
-            </div>
-        </div>
 </section>
 
 <!-- SECTION MAKNA LOGO INTERAKTIF (PRECISE HOVER & SYNC GLOW) -->
