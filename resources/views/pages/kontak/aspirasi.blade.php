@@ -21,9 +21,6 @@
         <div class="bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-xs space-y-8">
             
             <div class="text-center space-y-3 border-b border-slate-100 pb-6">
-                <span class="text-[11px] font-black uppercase tracking-widest text-[#334EAC] bg-blue-50 px-4 py-1.5 rounded-full border border-blue-100">
-                    Ruang Interaksi
-                </span>
                 <h1 class="text-3xl md:text-4xl font-black text-slate-900 tracking-tight">
                     Suara Mahasiswa
                 </h1>

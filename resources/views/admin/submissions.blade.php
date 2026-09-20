@@ -14,6 +14,7 @@
             <nav class="space-y-2 text-sm font-bold">
                 <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Dashboard</a>
                 <a href="{{ route('admin.submissions') }}" class="block px-4 py-2.5 rounded-xl bg-blue-600 text-white">Kurasi Artikel</a>
+                <a href="{{ route('admin.informasi') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Kelola Informasi</a>
                 <a href="/about/struktural" target="_blank" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Lihat Website &rarr;</a>
             </nav>
         </aside>

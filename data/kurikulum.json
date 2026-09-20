@@ -1,6 +1,7 @@
 [
     {
         "semester": 1,
+        "module_path": "modules\/semester-1-modul.zip",
         "courses": [
             {
                 "code": "KK33B174",
@@ -70,6 +71,7 @@
     },
     {
         "semester": 2,
+        "module_path": "modules\/semester-2-modul.zip",
         "courses": [
             {
                 "code": "KK33B224",
@@ -139,6 +141,7 @@
     },
     {
         "semester": 3,
+        "module_path": null,
         "courses": [
             {
                 "code": "KB33B325",
@@ -208,6 +211,7 @@
     },
     {
         "semester": 4,
+        "module_path": null,
         "courses": [
             {
                 "code": "KB33B435",
@@ -277,6 +281,7 @@
     },
     {
         "semester": 5,
+        "module_path": null,
         "courses": [
             {
                 "code": "BB33B554",
@@ -346,6 +351,7 @@
     },
     {
         "semester": 6,
+        "module_path": null,
         "courses": [
             {
                 "code": "KK33B653",
@@ -415,6 +421,7 @@
     },
     {
         "semester": 7,
+        "module_path": null,
         "courses": [
             {
                 "code": "PB33B767",
@@ -466,7 +473,7 @@
             },
             {
                 "code": "PILIHAN-7",
-                "name": "Mata Kuliah Pilihan (Sistem Informasi Geografis / Rantai Persediaan / Manajemen Data)",
+                "name": "Mata Kuliah Pilihan (Sistem Informasi Geografis \/ Rantai Persediaan \/ Manajemen Data)",
                 "teori": 4,
                 "praktikum": 0,
                 "praktek": 0,
@@ -476,10 +483,11 @@
     },
     {
         "semester": 8,
+        "module_path": null,
         "courses": [
             {
                 "code": "PILIHAN-8A",
-                "name": "Mata Kuliah Pilihan (Pengolahan Citra / Mobile / Start Up Digital)",
+                "name": "Mata Kuliah Pilihan (Pengolahan Citra \/ Mobile \/ Start Up Digital)",
                 "teori": 2,
                 "praktikum": 0,
                 "praktek": 1,
@@ -487,7 +495,7 @@
             },
             {
                 "code": "PILIHAN-8B",
-                "name": "Mata Kuliah Pilihan (Arsitektur Perusahaan / Teknologi Cloud)",
+                "name": "Mata Kuliah Pilihan (Arsitektur Perusahaan \/ Teknologi Cloud)",
                 "teori": 1,
                 "praktikum": 0,
                 "praktek": 1,

@@ -30,7 +30,6 @@
 
     {{-- Section Header --}}
     <header class="text-center mb-10">
-        <span class="inline-block text-xs font-semibold tracking-widest text-[#334EAC] uppercase mb-3">Konten Terbaru</span>
         <h2 id="blog-section-title" class="text-3xl sm:text-4xl font-extrabold text-slate-800 tracking-tight">
             Blog Terkini
         </h2>

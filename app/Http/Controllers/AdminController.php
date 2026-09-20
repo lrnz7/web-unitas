@@ -8,8 +8,10 @@ use App\Models\Article;
 use App\Models\Member;
 use App\Models\Division;
 use App\Models\Period;
+use App\Models\Information;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -387,5 +389,163 @@ class AdminController extends Controller
         File::put($eventsPath, json_encode($filteredEvents, JSON_PRETTY_PRINT));
 
         return redirect()->back()->with('success', 'Event berhasil dihapus!');
+    }
+
+    // -------------------------------------------------------------
+    // MODUL 5: MANAJEMEN INFORMASI (FULL CRUD)
+    // -------------------------------------------------------------
+    public function informasi()
+    {
+        $informasi = Information::latest()->get();
+        return view('admin.informasi.index', compact('informasi'));
+    }
+
+    public function storeInformasi(Request $request)
+    {
+        $request->validate([
+            'title'      => 'required|string|max:255',
+            'category'   => 'required|string|max:255',
+            'excerpt'    => 'required|string',
+            'content'    => 'nullable|string',
+            'image_path' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+        ]);
+
+        $imagePath = null;
+        if ($request->hasFile('image_path')) {
+            $imagePath = $request->file('image_path')->store('informasi', 'public');
+        }
+
+        Information::create([
+            'title'      => $request->title,
+            'category'   => $request->category,
+            'excerpt'    => $request->excerpt,
+            'content'    => $request->content,
+            'image_path' => $imagePath,
+            'is_active'  => $request->has('is_active') ? $request->boolean('is_active') : true,
+        ]);
+
+        return redirect()->back()->with('success', 'Informasi baru berhasil ditambahkan!');
+    }
+
+    public function editInformasi($id)
+    {
+        $info = Information::findOrFail($id);
+        return view('admin.informasi.edit', compact('info'));
+    }
+
+    public function updateInformasi(Request $request, $id)
+    {
+        $info = Information::findOrFail($id);
+
+        $request->validate([
+            'title'      => 'required|string|max:255',
+            'category'   => 'required|string|max:255',
+            'excerpt'    => 'required|string',
+            'content'    => 'nullable|string',
+            'image_path' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
+        ]);
+
+        if ($request->hasFile('image_path')) {
+            if ($info->image_path && Storage::disk('public')->exists($info->image_path)) {
+                Storage::disk('public')->delete($info->image_path);
+            }
+            $info->image_path = $request->file('image_path')->store('informasi', 'public');
+        }
+
+        $info->update([
+            'title'      => $request->title,
+            'category'   => $request->category,
+            'excerpt'    => $request->excerpt,
+            'content'    => $request->content,
+            'image_path' => $info->image_path,
+            'is_active'  => $request->boolean('is_active'),
+        ]);
+
+        return redirect()->route('admin.informasi')->with('success', 'Data informasi berhasil diperbarui!');
+    }
+
+    public function destroyInformasi($id)
+    {
+        $info = Information::findOrFail($id);
+
+        if ($info->image_path && Storage::disk('public')->exists($info->image_path)) {
+            Storage::disk('public')->delete($info->image_path);
+        }
+
+        $info->delete();
+
+        return redirect()->back()->with('success', 'Informasi berhasil dihapus!');
+    }
+
+    // -------------------------------------------------------------
+    // MODUL 6: MANAJEMEN MODUL PERKULIAHAN PER SEMESTER
+    // -------------------------------------------------------------
+    public function modul()
+    {
+        $curriculumPath = base_path('data/kurikulum.json');
+        $curriculum = File::exists($curriculumPath) ? json_decode(File::get($curriculumPath), true) : [];
+
+        return view('admin.modul.index', compact('curriculum'));
+    }
+
+    public function uploadModul(Request $request, $semester)
+    {
+        $request->validate([
+            'module_file' => 'required|file|mimes:zip|max:204800', // Max 200MB
+        ]);
+
+        $curriculumPath = base_path('data/kurikulum.json');
+        $curriculum = File::exists($curriculumPath) ? json_decode(File::get($curriculumPath), true) : [];
+
+        // Find existing module for this semester and delete old file
+        foreach ($curriculum as $sem) {
+            if ((int)$sem['semester'] === (int)$semester) {
+                if (!empty($sem['module_path']) && Storage::disk('public')->exists($sem['module_path'])) {
+                    Storage::disk('public')->delete($sem['module_path']);
+                }
+                break;
+            }
+        }
+
+        // Store new zip file
+        $path = $request->file('module_file')->storeAs(
+            'modules',
+            'semester-' . $semester . '-modul.zip',
+            'public'
+        );
+
+        // Update kurikulum.json
+        foreach ($curriculum as &$sem) {
+            if ((int)$sem['semester'] === (int)$semester) {
+                $sem['module_path'] = $path;
+                break;
+            }
+        }
+        unset($sem);
+
+        File::put($curriculumPath, json_encode($curriculum, JSON_PRETTY_PRINT));
+
+        return redirect()->route('admin.modul')->with('success', "Modul Semester {$semester} berhasil diunggah!");
+    }
+
+    public function deleteModul($semester)
+    {
+        $curriculumPath = base_path('data/kurikulum.json');
+        $curriculum = File::exists($curriculumPath) ? json_decode(File::get($curriculumPath), true) : [];
+
+        foreach ($curriculum as &$sem) {
+            if ((int)$sem['semester'] === (int)$semester) {
+                if (!empty($sem['module_path']) && Storage::disk('public')->exists($sem['module_path'])) {
+                    Storage::disk('public')->delete($sem['module_path']);
+                }
+                $sem['module_path'] = null;
+                break;
+            }
+        }
+        unset($sem);
+
+        File::put($curriculumPath, json_encode($curriculum, JSON_PRETTY_PRINT));
+
+        return redirect()->back()->with('success', "Modul Semester {$semester} berhasil dihapus.");
     }
 }

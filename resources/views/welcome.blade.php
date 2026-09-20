@@ -16,7 +16,7 @@
     <!-- Alpine.js -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-    <!-- Tailwind CSS v4 Browser CDN (Biar aman dari masalah manifest local/ngrok) -->
+    <!-- Tailwind CSS v4 Browser CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style>
@@ -39,22 +39,25 @@
 
         <!-- Main Content -->
         <main class="w-full flex-1">
-            <!-- 1. Background Selamat Datang -->
+            <!-- 1. Hero Section -->
             <x-hero />
 
-            <!-- 2. About Us Unitas -->
+            <!-- 2. Profil & About Program Studi -->
             <x-about-section />
 
-            <!-- 3. Informasi Akademis Grid -->
+            <!-- 3. Panduan Akademis & Kurikulum Program Studi (Nempel dengan About Prodi) -->
             <x-academic-section />
 
-            <!-- 4. Blog Terkini -->
+            <!-- 4. Pojok Informasi Terkini Mahasiswa (Pengumuman & Jadwal) -->
+            <x-info-corner :infoCorner="$infoCorner" />
+
+            <!-- 5. Blog & Artikel Terkini -->
             <x-blog-section />
 
-            <!-- 5. Features Section -->
+            <!-- 6. Features & Additional Tools Section -->
             <x-features-section />
 
-            <!-- 6. Galeri Section -->
+            <!-- 7. Galeri Section -->
             <x-gallery-section />
         </main>
 

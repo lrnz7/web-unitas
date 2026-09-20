@@ -14,6 +14,9 @@
     <a href="{{ route('admin.dashboard') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Dashboard</a>
     <a href="{{ route('admin.submissions') }}" class="block px-4 py-2.5 rounded-xl bg-blue-600 text-white">Kurasi Artikel</a>
     <a href="{{ route('admin.articles') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Artikel Admin</a>
+    <a href="{{ route('admin.events') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Kelola Event</a>
+    <a href="{{ route('admin.informasi') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Kelola Informasi</a>
+    <a href="{{ route('admin.modul') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Modul Perkuliahan</a>
     <a href="{{ route('admin.members') }}" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Kelola Pengurus</a>
     <a href="/" target="_blank" class="block px-4 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800 hover:text-white">Lihat Website &rarr;</a>
     <form action="{{ route('logout') }}" method="POST" class="pt-4 border-t border-slate-800">

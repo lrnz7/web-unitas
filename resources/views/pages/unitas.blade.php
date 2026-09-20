@@ -90,7 +90,7 @@
             <h2 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight mt-16">Jejak Perjalanan & Fondasi Organisasi</h2>
             <div class="flex flex-col gap-3 mt-4">
                 <p class="text-slate-600 leading-relaxed text-justify">
-                    Perjalanan Unitas SI berakar dari ketiadaan wadah khusus bagi mahasiswa Sistem Informasi FTIK Unindra untuk mengembangkan aspek akademik, kepemimpinan, dan kompetensi di luar ruang kuliah sejak prodi ini berdiri pada tahun 2023. Gagasan tersebut mulai dirintis melalui forum pertemuan dan pelatihan dasar mahasiswa pada awal tahun 2024.
+                    Perjalanan Unitas SI berakar dari ketiadaan wadah khusus bagi mahasiswa Sistem Informasi di Fakultas Teknik dan Ilmu Komputer Universitas Indraprasta PGRI untuk mengembangkan aspek akademik, kepemimpinan, dan kompetensi di luar ruang kuliah sejak prodi ini berdiri pada tahun 2023. Gagasan tersebut mulai dirintis melalui forum pertemuan dan pelatihan dasar mahasiswa pada awal tahun 2024.
                 </p>
                 <p class="text-slate-600 leading-relaxed text-justify">
                     Pada fase awalnya, organisasi ini sempat melewati masa perintisan dan penyesuaian di tengah dinamika internal serta tantangan legalitas. Melalui evaluasi bersama pihak fakultas, kepengurusan resmi yang sah secara administratif akhirnya terbentuk dan memulai fase tata kelola yang lebih terstruktur.
@@ -188,9 +188,8 @@
             
             <!-- Judul Seksi -->
             <div class="max-w-xl">
-                <h2 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Logo Philosophy</h2>
                 <h3 class="text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                    Makna & Filosofi Identitas Unitas SI
+                    Makna & Filosofi Logo Unitas SI
                 </h3>
             </div>
 

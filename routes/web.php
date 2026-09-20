@@ -6,20 +6,29 @@ use Illuminate\Support\Str;
 use App\Models\Period;
 use App\Models\Division;
 use App\Models\Member;
+use App\Models\Information;
 use App\Http\Controllers\ArticleSubmissionController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 
+// -------------------------------------------------------------
+// HOMEPAGE (Dengan Info Corner Random dari Database)
+// -------------------------------------------------------------
 Route::get('/', function () {
-    return view('welcome');
+    $infoCorner = Information::where('is_active', true)->inRandomOrder()->take(2)->get();
+    return view('welcome', compact('infoCorner'));
 });
 
-// Route Auth (Login & Logout)
+// -------------------------------------------------------------
+// ROUTE AUTHENTICATION (Login & Logout)
+// -------------------------------------------------------------
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-// Halaman About Program Studi SI
+// -------------------------------------------------------------
+// HALAMAN ABOUT (Prodi, Unitas & Struktural)
+// -------------------------------------------------------------
 Route::get('/about/prodi', function () {
     $curriculumPath = base_path('data/kurikulum.json');
     $curriculum = file_exists($curriculumPath) ? json_decode(file_get_contents($curriculumPath), true) : [];
@@ -27,12 +36,10 @@ Route::get('/about/prodi', function () {
     return view('pages.prodi', compact('curriculum'));
 });
 
-// Halaman About Unitas SI
 Route::get('/about/unitas', function () {
     return view('pages.unitas');
 });
 
-// Halaman Struktural (Hybrid System: JSON + Database + Fix Path Asset)
 Route::get('/about/struktural', function () {
     $periods = Period::all();
     $allPeriodData = [];
@@ -41,12 +48,9 @@ Route::get('/about/struktural', function () {
         $slug = $p->slug;
         $periodData = ['divisions' => [], 'members' => []];
 
-        // Arsip 2024-2025 ambil dari JSON kalau ada
         if ($slug === '2024-2025' && Storage::exists("structure/2024-2025.json")) {
             $periodData = json_decode(Storage::get("structure/2024-2025.json"), true);
-        } 
-        // Periode lainnya ambil dari Database
-        else {
+        } else {
             $currentPeriod = Period::where('slug', $slug)->first();
             if ($currentPeriod) {
                 $members = Member::with('division')->where('period_id', $currentPeriod->id)->get();
@@ -86,17 +90,20 @@ Route::get('/about/struktural', function () {
     return view('pages.struktural', compact('structure'));
 });
 
-// Route Group: Informasi Mahasiswa
+// -------------------------------------------------------------
+// ROUTE GROUP: INFORMASI MAHASISWA (Satu Pintu Akademis)
+// -------------------------------------------------------------
 Route::prefix('informasi')->group(function () {
 
+    // Pusat Informasi Akademis (DB MySQL + JSON Kurikulum Modul)
     Route::get('/akademis', function () {
         $curriculumPath = base_path('data/kurikulum.json');
         $curriculum = file_exists($curriculumPath) ? json_decode(file_get_contents($curriculumPath), true) : [];
 
-        $akademisPath = base_path('data/akademis.json');
-        $akademisData = file_exists($akademisPath) ? json_decode(file_get_contents($akademisPath), true) : [];
+        // Tarik semua data informasi yang aktif dari Database MySQL
+        $informasi = Information::where('is_active', true)->latest()->get();
         
-        return view('pages.informasi.akademis', compact('curriculum', 'akademisData'));
+        return view('pages.informasi.akademis', compact('curriculum', 'informasi'));
     });
 
     Route::get('/denah-kampus', function () {
@@ -115,7 +122,9 @@ Route::prefix('informasi')->group(function () {
 
 });
 
-// Route Group: Event & Kegiatan Unitas
+// -------------------------------------------------------------
+// ROUTE GROUP: EVENT & KEGIATAN UNITAS
+// -------------------------------------------------------------
 Route::prefix('events')->group(function () {
 
     Route::get('/', function () {
@@ -142,7 +151,9 @@ Route::prefix('events')->group(function () {
 
 });
 
-// Route Group: Partisipasi & Layanan Mahasiswa
+// -------------------------------------------------------------
+// ROUTE GROUP: PARTISIPASI & LAYANAN MAHASISWA
+// -------------------------------------------------------------
 Route::prefix('kontak')->group(function () {
 
     Route::get('/', function () {
@@ -161,7 +172,9 @@ Route::prefix('kontak')->group(function () {
 
 });
 
-// Route Group: Blog & Berita Unitas SI (Merge DB + JSON)
+// -------------------------------------------------------------
+// ROUTE GROUP: BLOG & BERITA UNITAS SI
+// -------------------------------------------------------------
 Route::prefix('blog')->group(function () {
 
     Route::get('/', function () {
@@ -235,7 +248,9 @@ Route::prefix('blog')->group(function () {
 
 });
 
-// Route Group: Panel Admin Unitas SI (Protected with Middleware Auth)
+// -------------------------------------------------------------
+// ROUTE GROUP: PANEL ADMIN UNITAS SI (Protected Auth)
+// -------------------------------------------------------------
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.dashboard');
     
@@ -266,9 +281,23 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::get('/events/{id}/edit', [AdminController::class, 'editEvent'])->name('admin.events.edit');
     Route::put('/events/{id}', [AdminController::class, 'updateEvent'])->name('admin.events.update');
     Route::delete('/events/{id}', [AdminController::class, 'destroyEvent'])->name('admin.events.destroy');
+
+    // Kelola Informasi Akademis & Ensiklopedi (CRUD FULL)
+    Route::get('/informasi', [AdminController::class, 'informasi'])->name('admin.informasi');
+    Route::post('/informasi', [AdminController::class, 'storeInformasi'])->name('admin.informasi.store');
+    Route::get('/informasi/{id}/edit', [AdminController::class, 'editInformasi'])->name('admin.informasi.edit');
+    Route::put('/informasi/{id}', [AdminController::class, 'updateInformasi'])->name('admin.informasi.update');
+    Route::delete('/informasi/{id}', [AdminController::class, 'destroyInformasi'])->name('admin.informasi.destroy');
+
+    // Kelola Upload Modul Perkuliahan .ZIP Per Semester
+    Route::get('/modul', [AdminController::class, 'modul'])->name('admin.modul');
+    Route::post('/modul/{semester}/upload', [AdminController::class, 'uploadModul'])->name('admin.modul.upload');
+    Route::delete('/modul/{semester}/delete', [AdminController::class, 'deleteModul'])->name('admin.modul.delete');
 });
 
-// Route: E-Voting Pilkoor (Coming Soon)
+// -------------------------------------------------------------
+// ROUTE LAINNYA (Coming Soon)
+// -------------------------------------------------------------
 Route::get('/voting', function () {
     return view('pages.coming-soon', [
         'title' => 'E-Voting Pilkoor',
@@ -276,7 +305,6 @@ Route::get('/voting', function () {
     ]);
 });
 
-// Route: Open Recruitment (Coming Soon)
 Route::get('/oprec', function () {
     return view('pages.coming-soon', [
         'title' => 'Open Recruitment',
@@ -284,7 +312,6 @@ Route::get('/oprec', function () {
     ]);
 });
 
-// Route: Sisformerch (Coming Soon)
 Route::get('/shop', function () {
     return view('pages.coming-soon', [
         'title' => 'Sisformerch',
