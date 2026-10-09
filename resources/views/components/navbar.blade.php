@@ -22,22 +22,36 @@
     $navItems = $navItems ?? ($jsonData['navigation'] ?? []);
 @endphp
 
-<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-50">
-    <nav class="w-full max-w-[1440px] px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between mx-auto" aria-label="Navigasi Utama">
-        
-        {{-- Brand Logo --}}
-        <a href="{{ url('/') }}" class="flex items-center gap-3 group focus:outline-none rounded-xl p-1 transition-transform duration-200 hover:scale-[1.02]">
-            <img src="{{ asset('images/logo-unitas.png') }}" alt="{{ $brand['alt'] ?? 'Logo Unitas SI' }}" class="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:rotate-2">
-            <span class="sr-only">{{ $brand['name'] }}</span>
+<header x-data="{ scrolled: false, open: false }"
+        @scroll.window="scrolled = window.scrollY > 16"
+        @click.outside="open = false"
+        @keydown.escape.window="open = false"
+        x-effect="document.body.style.overflow = open ? 'hidden' : ''"
+        :class="scrolled ? 'bg-white/80 backdrop-blur-xl border-slate-200/80 shadow-sm' : 'bg-white/60 backdrop-blur-md border-transparent'"
+        class="fixed inset-x-0 top-0 z-50 border-b transition duration-300">
+
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:h-20 md:px-8">
+
+        {{-- Brand Block --}}
+        <a href="{{ url('/') }}" class="focus:outline-none">
+            <div x-data="{ logoFailed: false }" class="flex items-center gap-3">
+                <img x-on:error="logoFailed = true" x-show="!logoFailed"
+                     src="{{ asset('images/logo-unitas.png') }}" width="36" height="36"
+                     alt="Unitas Sistem Informasi" class="h-9 w-auto md:h-10">
+                <span x-show="logoFailed" style="display: none"
+                      class="grid size-9 place-items-center rounded-xl bg-[#334EAC] text-xs font-semibold tracking-wider text-white">UN</span>
+                <span class="sr-only">{{ $brand['name'] }}</span>
+                <span class="hidden text-sm font-semibold text-slate-900 sm:block">Unitas SI</span>
+            </div>
         </a>
 
-        {{-- Desktop Navigation Menu (Presisi & Seragam 100%) --}}
-        <ul class="hidden lg:flex items-center gap-1 xl:gap-2 text-xs xl:text-sm font-medium">
+        {{-- Desktop Navigation Links --}}
+        <ul class="hidden items-center gap-1 xl:gap-2 text-xs xl:text-sm font-medium lg:flex">
             @foreach($navItems as $item)
                 @php
                     $urlPath = ltrim(parse_url($item['url'], PHP_URL_PATH) ?? '', '/');
                     $hasDropdown = !empty($item['dropdown']);
-                    
+
                     // Logic Active State yang Presisi (Gak akan bocor ke hash /#)
                     if ($urlPath === '' || $urlPath === '/') {
                         $isCurrent = request()->is('/') && !request()->has('hash');
@@ -51,22 +65,28 @@
                         {{-- DROPDOWN MENU ITEM --}}
                         <div class="relative">
                             <a href="{{ url($item['url']) }}"
-                               class="px-3.5 py-2 rounded-full transition-all duration-200 flex items-center gap-1 focus:outline-none {{ $isCurrent ? 'text-[#334EAC] font-black bg-blue-50 shadow-2xs' : 'text-slate-600 hover:text-[#334EAC] hover:bg-blue-50/80 font-bold' }}">
+                               class="relative flex items-center gap-1 px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-200 focus:outline-none {{ $isCurrent ? 'text-[#334EAC]' : 'text-slate-600 hover:text-[#334EAC] hover:bg-[#334EAC]/5' }}"
+                               @if($isCurrent) aria-current="page" @endif>
                                 <span>{{ $item['name'] }}</span>
-                                <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-[#334EAC] group-hover:rotate-180 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-[#334EAC] group-hover:rotate-180 transition-transform duration-200 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                                 </svg>
+                                @if($isCurrent)
+                                    <span class="absolute inset-x-3.5 -bottom-px h-0.5 rounded-full bg-[#334EAC]"></span>
+                                @endif
                             </a>
 
                             {{-- DROPDOWN SUB-MENU --}}
-                            <ul class="absolute left-0 mt-2 w-52 bg-white border border-slate-100 rounded-2xl shadow-xl shadow-slate-200/50 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
+                            <ul class="absolute left-0 mt-2 w-56 bg-white border border-slate-200 rounded-2xl shadow-xl shadow-slate-200/50 py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 z-50">
                                 @foreach($item['dropdown'] as $sub)
                                     @php
                                         $subPath = ltrim(parse_url($sub['url'], PHP_URL_PATH) ?? '', '/');
                                         $isSubActive = request()->is($subPath);
                                     @endphp
                                     <li>
-                                        <a href="{{ url($sub['url']) }}" class="block px-4 py-2.5 text-xs font-bold transition-colors {{ $isSubActive ? 'text-[#334EAC] bg-blue-50' : 'text-slate-600 hover:text-[#334EAC] hover:bg-blue-50/60' }}">
+                                        <a href="{{ url($sub['url']) }}"
+                                           class="block px-4 py-2.5 text-xs font-medium transition-colors {{ $isSubActive ? 'text-[#334EAC] bg-[#334EAC]/5' : 'text-slate-600 hover:text-[#334EAC] hover:bg-[#334EAC]/5' }}"
+                                           @if($isSubActive) aria-current="page" @endif>
                                             {{ $sub['name'] }}
                                         </a>
                                     </li>
@@ -76,89 +96,77 @@
                     @else
                         {{-- MENU BIASA --}}
                         <a href="{{ url($item['url']) }}"
-                           class="px-3.5 py-2 rounded-full transition-all duration-200 flex items-center gap-1 focus:outline-none {{ $isCurrent ? 'text-[#334EAC] font-black bg-blue-50 shadow-2xs' : 'text-slate-600 hover:text-[#334EAC] hover:bg-blue-50/80 font-bold' }}">
+                           class="relative flex items-center gap-1 px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-200 focus:outline-none {{ $isCurrent ? 'text-[#334EAC]' : 'text-slate-600 hover:text-[#334EAC] hover:bg-[#334EAC]/5' }}"
+                           @if($isCurrent) aria-current="page" @endif>
                             <span>{{ $item['name'] }}</span>
+                            @if($isCurrent)
+                                <span class="absolute inset-x-3.5 -bottom-px h-0.5 rounded-full bg-[#334EAC]"></span>
+                            @endif
                         </a>
                     @endif
                 </li>
             @endforeach
         </ul>
 
-        {{-- Mobile Menu Hamburger Button --}}
-        <button type="button"
-                id="navbar-toggle-btn"
-                class="lg:hidden inline-flex items-center justify-center p-2 rounded-xl text-slate-600 hover:text-[#334EAC] hover:bg-blue-50/80 focus:outline-none transition-all duration-200"
-                aria-expanded="false"
-                aria-controls="mobile-nav-menu">
-            <svg id="hamburger-icon" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        {{-- Mobile Hamburger Button --}}
+        <button type="button" @click="open = !open"
+                :aria-expanded="open.toString()" aria-controls="mobile-menu" aria-label="Buka menu"
+                class="grid size-11 place-items-center rounded-xl border border-slate-200 bg-white text-slate-900 transition lg:hidden">
+            {{-- Hamburger icon --}}
+            <svg x-show="!open" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
-            <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            {{-- Close icon --}}
+            <svg x-show="open" style="display: none" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
-    </nav>
+    </div>
 
-    {{-- Mobile Dropdown Menu --}}
-    <nav id="mobile-nav-menu" class="hidden lg:hidden w-full border-t border-gray-100 bg-white px-6 pt-3 pb-6 shadow-xl">
-        <ul class="space-y-1 w-full max-w-[1440px] mx-auto">
+    {{-- Mobile Dropdown Panel --}}
+    <div id="mobile-menu" x-show="open" style="display: none"
+         x-transition:enter="transition duration-200 ease-out"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition duration-150 ease-in"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="absolute inset-x-4 top-full mt-2 rounded-2xl border border-slate-200 bg-white/95 p-3 shadow-xl backdrop-blur-xl lg:hidden">
+        <nav class="flex flex-col gap-1" aria-label="Navigasi Mobile">
             @foreach($navItems as $item)
                 @php
                     $urlPath = ltrim(parse_url($item['url'], PHP_URL_PATH) ?? '', '/');
                     $hasDropdown = !empty($item['dropdown']);
-                    
+
                     if ($urlPath === '' || $urlPath === '/') {
                         $isCurrent = request()->is('/');
                     } else {
                         $isCurrent = request()->is($urlPath) || request()->is($urlPath . '/*');
                     }
                 @endphp
-                <li>
-                    <a href="{{ url($item['url']) }}"
-                       class="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-bold transition-colors {{ $isCurrent ? 'text-[#334EAC] bg-blue-50' : 'text-slate-700 hover:text-[#334EAC] hover:bg-slate-50' }}">
-                        <span>{{ $item['name'] }}</span>
-                        @if($hasDropdown)
-                            <svg class="w-4 h-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        @endif
-                    </a>
-                    @if($hasDropdown)
-                        <ul class="pl-4 pr-2 py-1 space-y-1">
-                            @foreach($item['dropdown'] as $sub)
-                                @php
-                                    $subPath = ltrim(parse_url($sub['url'], PHP_URL_PATH) ?? '', '/');
-                                    $isSubActive = request()->is($subPath);
-                                @endphp
-                                <li>
-                                    <a href="{{ url($sub['url']) }}" class="block px-3 py-2 rounded-lg text-xs font-bold transition-colors {{ $isSubActive ? 'text-[#334EAC] bg-blue-50' : 'text-slate-500 hover:text-[#334EAC] hover:bg-blue-50/60' }}">
-                                        {{ $sub['name'] }}
-                                    </a>
-                                </li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </li>
+
+                <a href="{{ url($item['url']) }}" @click="open = false"
+                   class="block rounded-xl px-4 py-3 text-base font-medium transition {{ $isCurrent ? 'bg-[#334EAC]/5 text-[#334EAC]' : 'text-slate-700 hover:bg-[#334EAC]/5 hover:text-[#334EAC]' }}"
+                   @if($isCurrent) aria-current="page" @endif>
+                    {{ $item['name'] }}
+                </a>
+
+                @if($hasDropdown)
+                    <div class="flex flex-col gap-0.5 pl-4 pb-1">
+                        @foreach($item['dropdown'] as $sub)
+                            @php
+                                $subPath = ltrim(parse_url($sub['url'], PHP_URL_PATH) ?? '', '/');
+                                $isSubActive = request()->is($subPath);
+                            @endphp
+                            <a href="{{ url($sub['url']) }}" @click="open = false"
+                               class="block rounded-lg px-3 py-2 text-sm font-medium transition {{ $isSubActive ? 'text-[#334EAC] bg-[#334EAC]/5' : 'text-slate-500 hover:text-[#334EAC] hover:bg-[#334EAC]/5' }}"
+                               @if($isSubActive) aria-current="page" @endif>
+                                {{ $sub['name'] }}
+                            </a>
+                        @endforeach
+                    </div>
+                @endif
             @endforeach
-        </ul>
-    </nav>
+        </nav>
+    </div>
 </header>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const toggleBtn = document.getElementById('navbar-toggle-btn');
-        const mobileMenu = document.getElementById('mobile-nav-menu');
-        const hamburgerIcon = document.getElementById('hamburger-icon');
-        const closeIcon = document.getElementById('close-icon');
-
-        if (toggleBtn && mobileMenu) {
-            toggleBtn.addEventListener('click', function() {
-                const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-                toggleBtn.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
-                hamburgerIcon.classList.toggle('hidden');
-                closeIcon.classList.toggle('hidden');
-            });
-        }
-    });
-</script>

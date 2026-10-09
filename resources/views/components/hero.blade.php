@@ -1,66 +1,60 @@
 @props([
-    'data' => null,
-    'badge' => null,
-    'title' => null,
-    'tagline' => null,
-    'bgImage' => null,
-    'ctaPrimary' => null,
-    'ctaSecondary' => null,
+'data' => null,
+'badge' => null,
+'title' => null,
+'tagline' => null,
+'bgImage' => null,
+'ctaPrimary' => null,
+'ctaSecondary' => null,
 ])
 
 @php
-    if (!$data) {
-        $jsonPath = base_path('data/unitas.json');
-        $jsonData = file_exists($jsonPath) ? json_decode(file_get_contents($jsonPath), true) : [];
-    } else {
-        $jsonData = $data;
-    }
+if (!$data) {
+$jsonPath = base_path('data/unitas.json');
+$jsonData = file_exists($jsonPath) ? json_decode(file_get_contents($jsonPath), true) : [];
+} else {
+$jsonData = $data;
+}
 
-    $heroData = $jsonData['hero'] ?? [];
+$heroData = $jsonData['hero'] ?? [];
 
-    $badge = $badge ?? ($heroData['badge'] ?? 'Unitas Sistem Informasi');
-    $title = $title ?? ($heroData['title'] ?? 'Selamat Datang di Website Unitas Sistem Informasi');
-    $tagline = $tagline ?? ($heroData['tagline'] ?? 'Wadah kreasi, inovasi, kolaborasi, dan pengembangan teknologi mahasiswa Sistem Informasi.');
+$badge = $badge ?? ($heroData['badge'] ?? 'Unitas Sistem Informasi');
+$title = $title ?? ($heroData['title'] ?? 'Selamat Datang di Website Unitas Sistem Informasi');
+$tagline = $tagline ?? ($heroData['tagline'] ?? 'Wadah kreasi, inovasi, kolaborasi, dan pengembangan teknologi mahasiswa Sistem Informasi.');
 @endphp
 
-{{-- Hero Section Container --}}
-<section class="relative w-full max-w-[1440px] px-6 lg:px-12 py-8 md:py-12 mx-auto" aria-labelledby="hero-title">
-    {{-- Side Decorative Background Wings --}}
-    <div class="hidden xl:block absolute -left-12 top-1/2 -translate-y-1/2 w-48 h-64 bg-[#BAD6EB]/40 rounded-r-[60px] blur-xl pointer-events-none z-0"></div>
-    <div class="hidden xl:block absolute -right-12 top-1/2 -translate-y-1/2 w-48 h-64 bg-[#BAD6EB]/40 rounded-l-[60px] blur-xl pointer-events-none z-0"></div>
+<section class="relative isolate overflow-hidden bg-white pt-24 pb-16 md:pt-32 md:pb-24">
 
-    {{-- Main Hero Card Banner --}}
-    <article class="group/card relative w-full min-h-[580px] lg:min-h-[620px] rounded-3xl overflow-hidden shadow-2xl shadow-blue-950/20 border border-slate-200/50 flex items-center justify-center text-center bg-[#072B63]">
-        
-        {{-- Background Image --}}
+    {{-- Background image: full-width fade on mobile, right-half on desktop --}}
+    <div class="absolute inset-x-0 top-0 -z-10 h-[52svh] md:inset-y-0 md:left-1/2 md:h-auto md:w-1/2">
         <img src="{{ asset('images/IMG-20260823-WA0068.jpg') }}"
-             alt="Foto Dokumentasi Unitas Sistem Informasi"
-             class="absolute inset-0 w-full h-full object-cover object-center z-0 scale-100 transition-transform duration-700 ease-out group-hover/card:scale-105"
-             onerror="this.src='https://placehold.co/1200x600/072B63/FFF?text=Unitas+Sistem+Informasi'">
+            alt="Foto Dokumentasi Unitas Sistem Informasi"
+            class="size-full object-cover object-[center_25%] md:object-center">
+        <div class="absolute inset-0 bg-linear-to-b from-transparent via-white/50 to-white md:bg-linear-to-r md:from-white md:via-white/40 md:to-transparent"></div>
+    </div>
 
-        {{-- Gradient Overlay --}}
-        <div class="absolute inset-0 bg-gradient-to-tr from-[#072B63]/80 via-[#1E4A8D]/65 to-[#2A65B8]/70 z-10"></div>
+    <div class="relative mx-auto max-w-7xl px-4 md:px-8">
+        <div class="mt-[26svh] md:mt-0 md:max-w-xl">
 
-        {{-- Content Wrapper --}}
-        <div class="relative z-20 flex flex-col items-center justify-center p-6 sm:p-12 lg:p-16 text-center w-full">
-
-            {{-- Hero Heading --}}
-            <h1 id="hero-title" class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight sm:leading-tight lg:leading-snug drop-shadow-md max-w-4xl transition-all duration-300 ease-out transform hover:scale-[1.02] hover:-translate-y-1 hover:drop-shadow-2xl cursor-default">
+            {{-- Heading --}}
+            <h1 id="hero-title"
+                class="mt-5 text-[2.75rem] leading-[1.05] font-semibold tracking-[-0.035em] text-balance text-slate-900 sm:text-6xl md:text-7xl">
                 {{ $title }}
             </h1>
 
-            {{-- Subtitle / Tagline --}}
-            <p class="mt-4 sm:mt-6 text-sm sm:text-base md:text-lg text-blue-100/90 font-normal leading-relaxed max-w-2xl transition-all duration-300 ease-out transform hover:scale-[1.02] hover:-translate-y-1 hover:drop-shadow-xl cursor-default">
+            {{-- Tagline / Subtext --}}
+            <p class="mt-5 max-w-sm text-base text-slate-600 text-balance sm:max-w-xl md:text-lg">
                 {{ $tagline }}
             </p>
 
-            {{-- CTA Button Group --}}
-            <nav class="mt-8 sm:mt-10 flex flex-wrap items-center justify-center gap-3 sm:gap-4" aria-label="Aksi Cepat Hero">
+            {{-- CTA Buttons --}}
+            <div class="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 <a href="{{ url('/about/unitas') }}"
-                   class="px-8 py-3.5 rounded-full text-sm sm:text-base font-semibold text-white bg-white/20 border border-white/40 backdrop-blur-md hover:bg-white hover:text-[#072B63] hover:border-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+                    class="inline-flex w-full items-center justify-center rounded-full bg-[#334EAC] px-6 py-3 text-sm font-medium text-white shadow-lg shadow-[#334EAC]/25 transition duration-300 hover:-translate-y-0.5 hover:bg-[#334EAC]/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#334EAC] sm:w-auto">
                     About Us
                 </a>
-            </nav>
+            </div>
+
         </div>
-    </article>
+    </div>
 </section>

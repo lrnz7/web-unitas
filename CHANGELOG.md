@@ -218,3 +218,38 @@ Semua catatan perubahan, rilis fitur, dan pembaruan sistem dicatat dalam dokumen
 
 ---
 **Core Brand Preservation**: All accent colors remain locked to `#334EAC` Royal Blue with Minimalist White foundational layout structure.
+
+
+## Release v2.4.0 - Grand UI/UX Refactoring & Structure System Polish
+
+Major release introducing a complete design system overhaul across core components, aligning with a pristine Minimalist White baseline and locked `#334EAC` Royal Blue brand accents.
+
+---
+
+## 💎 Phase 1: Navigation & Hero Section Overhaul
+
+### 🌐 Navbar & Header (`navbar.blade.php`)
+- ✨ **Full Alpine.js Rewrite**: Implemented dynamic glass-scroll header transition with precision active navigation underlines.
+- 📱 **Mobile Drawer**: Added backdrop transition animations, Escape key dismiss, outside-click detection, and `body-scroll-lock` to prevent background scrolling.
+- 🖼️ **Fallback Resilience**: Integrated an automated dynamic fallback badge (`UN`) in case brand logos fail to load.
+
+### 🎯 Hero Component (`hero.blade.php` & `welcome.blade.php`)
+- 🎨 **Minimalist White Baseline**: Refactored background from `bg-slate-50` to pure `bg-white` for a crisp, high-end aesthetic.
+- 📐 **Responsive Split Layout**: Desktop displays a clean 50/50 split layout, while mobile seamlessly fades hero imagery into the page body.
+- 📏 **Viewport Clearance**: Applied `pt-24 md:pt-32` top-padding strategies to prevent fixed navbar overlapping without artificial spacer elements.
+
+---
+
+## 🏛️ Phase 2: Structural Page & Component Refactoring
+
+### 🎴 Compact Member Cards & Grid System (`structure.blade.php`)
+- 📐 **Proportional Aspect Ratios**: Standardized card imagery using `aspect-[3/4]` responsive utilities, eliminating static pixel height degradation (`h-72`/`h-64`).
+- ⏱️ **Hover Photo Swap**: Restored Alpine.js state-driven formal/informal photo toggle with a 1500ms hover timer and `DOMNodeRemoved` memory leak cleanup.
+- 📱 **Responsive Grid Layout**: Compact 2/3/4-column responsive grid (`grid-cols-2 md:grid-cols-3 lg:grid-cols-4`) with max-width caps (`max-w-[16rem] md:max-w-xs`) for featured Koordinator and Kadiv cards.
+
+### 🔘 Division Navigation & Accessibility
+- 👆 **Touch-Swipe Tabs**: Removed clunky mobile jump bars in favor of a smooth horizontal scroll container (`-mx-4 px-4`) ensuring all division tabs (including PPPM) are effortlessly reachable on mobile viewports.
+- 📄 **Targeted Duty Details**: Restricted individual task breakdowns exclusively to Koordinator & BPH roles to preserve card density across regular division members.
+- 🎯 **Strict Brand Accents**: Resolved all accent colors, hover borders, and bullet markers to `#334EAC` Royal Blue.
+
+---

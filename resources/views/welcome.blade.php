@@ -32,8 +32,8 @@
         }
     </style>
 </head>
-<body class="w-full min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-[#334EAC] selection:text-white overflow-x-hidden">
-    <div class="w-full min-h-screen bg-slate-50 flex flex-col">
+<body class="w-full min-h-screen bg-white text-slate-800 antialiased selection:bg-[#334EAC] selection:text-white overflow-x-hidden">
+    <div class="w-full min-h-screen bg-white flex flex-col">
         <!-- Navbar Component -->
         <x-navbar />
 
