@@ -1,139 +1,139 @@
 @php
-    $periods = [
-        ['id' => '2024-2025', 'label' => '2024/25'],
-        ['id' => '2025-2026', 'label' => '2025/26'],
-        ['id' => '2026-2027', 'label' => '2026/27']
-    ];
+$periods = [
+['id' => '2024-2025', 'label' => '2024/25'],
+['id' => '2025-2026', 'label' => '2025/26'],
+['id' => '2026-2027', 'label' => '2026/27']
+];
 
-    $defaultPeriod = '2025-2026';
+$defaultPeriod = '2025-2026';
 
-    $divisionalCovers = [
-        '2025-2026' => [
-            'koordinator'  => asset('images/divisi/2025/koordinator-group.jpg'),
-            'psdm'         => asset('images/divisi/2025/psdm-group.jpg'),
-            'komwira'      => asset('images/divisi/2025/komwira-group.jpg'),
-            'pppm'         => asset('images/divisi/2025/pppm-group.jpg'),
-        ],
-        '2026-2027' => [
-            'koordinator'  => asset('images/divisi/2026/koordinator-group.jpg'),
-            'psdm'         => asset('images/divisi/2026/psdm-group.jpg'),
-            'komwira'      => asset('images/divisi/2026/komwira-group.jpg'),
-            'pppm'         => asset('images/divisi/2026/pppm-group.jpg'),
-        ]
-    ];
+$divisionalCovers = [
+'2025-2026' => [
+'koordinator' => asset('images/divisi/2025/koordinator-group.jpg'),
+'psdm' => asset('images/divisi/2025/psdm-group.jpg'),
+'komwira' => asset('images/divisi/2025/komwira-group.jpg'),
+'pppm' => asset('images/divisi/2025/pppm-group.jpg'),
+],
+'2026-2027' => [
+'koordinator' => asset('images/divisi/2026/koordinator-group.jpg'),
+'psdm' => asset('images/divisi/2026/psdm-group.jpg'),
+'komwira' => asset('images/divisi/2026/komwira-group.jpg'),
+'pppm' => asset('images/divisi/2026/pppm-group.jpg'),
+]
+];
 
-    $allStructureData = [
-        '2024-2025' => [
-            'divisions' => [
-                ['id' => 'koordinator', 'name' => 'Koordinator & BPH'],
-                ['id' => 'kaderisasi', 'name' => 'Kaderisasi'],
-                ['id' => 'kewirausahaan', 'name' => 'Kewirausahaan'],
-                ['id' => 'kominfo', 'name' => 'Kominfo'],
-            ],
-            'members' => [
-                ['id' => 1, 'division' => 'koordinator', 'role' => 'Koordinator', 'name' => 'M Roihan Hidayatullah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 2, 'division' => 'koordinator', 'role' => 'Sekretaris', 'name' => 'Jane Janitra M A', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 3, 'division' => 'koordinator', 'role' => 'Bendahara', 'name' => 'M Asriel Amri', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 4, 'division' => 'kaderisasi', 'role' => 'Kepala Divisi Kaderisasi', 'name' => 'Manda Christoffel Kowaas', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 5, 'division' => 'kaderisasi', 'role' => 'Anggota Kaderisasi', 'name' => 'Narendro Ageng Winarsis', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 6, 'division' => 'kewirausahaan', 'role' => 'Kepala Divisi Kewirausahaan', 'name' => 'Deden Taufiqurrahman', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 7, 'division' => 'kominfo', 'role' => 'Kepala Divisi Kominfo', 'name' => 'Fazri Aziz Siregar', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 8, 'division' => 'kominfo', 'role' => 'Anggota Kominfo', 'name' => 'Naufal Rafi Mudzafar', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-            ]
-        ],
-        '2025-2026' => $structure['data']['2025-2026'] ?? [
-            'divisions' => [
-                ['id' => 'koordinator', 'name' => 'Koordinator & BPH'],
-                ['id' => 'psdm', 'name' => 'PSDM'],
-                ['id' => 'komwira', 'name' => 'KOMWIRA'],
-                ['id' => 'pppm', 'name' => 'PPPM']
-            ],
-            'members' => $structure['data']['2025-2026']['members'] ?? []
-        ],
-        '2026-2027' => [
-            'divisions' => [
-                ['id' => 'koordinator', 'name' => 'Koordinator & BPH'],
-                ['id' => 'psdm', 'name' => 'PSDM'],
-                ['id' => 'komwira', 'name' => 'KOMWIRA'],
-                ['id' => 'pppm', 'name' => 'PPPM']
-            ],
-            'members' => [
-                ['id' => 101, 'division' => 'koordinator', 'role' => 'Koordinator', 'name' => 'M. Daffa Athaya', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 102, 'division' => 'koordinator', 'role' => 'Wakil Koordinator', 'name' => 'M. Fathan Arbiansyah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 103, 'division' => 'koordinator', 'role' => 'Sekretaris', 'name' => 'Syahla Asyifa Nova', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 104, 'division' => 'koordinator', 'role' => 'Bendahara', 'name' => 'Rahma Arsyita Saputri', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 105, 'division' => 'psdm', 'role' => 'Kepala Divisi PSDM', 'name' => 'Alferdo Khevel Lilo', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 106, 'division' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'Daffa Imam P', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 107, 'division' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'M. Ivan Satrio', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 108, 'division' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'Mutiara Aulia', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 109, 'division' => 'komwira', 'role' => 'Kepala Divisi KOMWIRA', 'name' => 'Afif Faturrahmanudin', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 110, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Nabil Nur Syaban', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 111, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Ardita Putri Maharani', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 112, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'TB. Adam Santana', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 113, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Gilang Reihan', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 114, 'division' => 'pppm', 'role' => 'Kepala Divisi PPPM', 'name' => 'Wardatun Nazwa Rohmah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 115, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Aldea Salwa Nur Safitri', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 116, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Andhika Ricky', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 117, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Rapiza Akbar', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-                ['id' => 118, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Ferdy Irmansyah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
-            ]
-        ]
-    ];
+$allStructureData = [
+'2024-2025' => [
+'divisions' => [
+['id' => 'koordinator', 'name' => 'Koordinator & BPH'],
+['id' => 'kaderisasi', 'name' => 'Kaderisasi'],
+['id' => 'kewirausahaan', 'name' => 'Kewirausahaan'],
+['id' => 'kominfo', 'name' => 'Kominfo'],
+],
+'members' => [
+['id' => 1, 'division' => 'koordinator', 'role' => 'Koordinator', 'name' => 'M Roihan Hidayatullah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 2, 'division' => 'koordinator', 'role' => 'Sekretaris', 'name' => 'Jane Janitra M A', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 3, 'division' => 'koordinator', 'role' => 'Bendahara', 'name' => 'M Asriel Amri', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 4, 'division' => 'kaderisasi', 'role' => 'Kepala Divisi Kaderisasi', 'name' => 'Manda Christoffel Kowaas', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 5, 'division' => 'kaderisasi', 'role' => 'Anggota Kaderisasi', 'name' => 'Narendro Ageng Winarsis', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 6, 'division' => 'kewirausahaan', 'role' => 'Kepala Divisi Kewirausahaan', 'name' => 'Deden Taufiqurrahman', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 7, 'division' => 'kominfo', 'role' => 'Kepala Divisi Kominfo', 'name' => 'Fazri Aziz Siregar', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 8, 'division' => 'kominfo', 'role' => 'Anggota Kominfo', 'name' => 'Naufal Rafi Mudzafar', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+]
+],
+'2025-2026' => $structure['data']['2025-2026'] ?? [
+'divisions' => [
+['id' => 'koordinator', 'name' => 'Koordinator & BPH'],
+['id' => 'psdm', 'name' => 'PSDM'],
+['id' => 'komwira', 'name' => 'KOMWIRA'],
+['id' => 'pppm', 'name' => 'PPPM']
+],
+'members' => $structure['data']['2025-2026']['members'] ?? []
+],
+'2026-2027' => [
+'divisions' => [
+['id' => 'koordinator', 'name' => 'Koordinator & BPH'],
+['id' => 'psdm', 'name' => 'PSDM'],
+['id' => 'komwira', 'name' => 'KOMWIRA'],
+['id' => 'pppm', 'name' => 'PPPM']
+],
+'members' => [
+['id' => 101, 'division' => 'koordinator', 'role' => 'Koordinator', 'name' => 'M. Daffa Athaya', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 102, 'division' => 'koordinator', 'role' => 'Wakil Koordinator', 'name' => 'M. Fathan Arbiansyah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 103, 'division' => 'koordinator', 'role' => 'Sekretaris', 'name' => 'Syahla Asyifa Nova', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 104, 'division' => 'koordinator', 'role' => 'Bendahara', 'name' => 'Rahma Arsyita Saputri', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 105, 'division' => 'psdm', 'role' => 'Kepala Divisi PSDM', 'name' => 'Alferdo Khevel Lilo', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 106, 'division' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'Daffa Imam P', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 107, 'division' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'M. Ivan Satrio', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 108, 'division' => 'psdm', 'role' => 'Anggota PSDM', 'name' => 'Mutiara Aulia', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 109, 'division' => 'komwira', 'role' => 'Kepala Divisi KOMWIRA', 'name' => 'Afif Faturrahmanudin', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 110, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Nabil Nur Syaban', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 111, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Ardita Putri Maharani', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 112, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'TB. Adam Santana', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 113, 'division' => 'komwira', 'role' => 'Anggota KOMWIRA', 'name' => 'Gilang Reihan', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 114, 'division' => 'pppm', 'role' => 'Kepala Divisi PPPM', 'name' => 'Wardatun Nazwa Rohmah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 115, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Aldea Salwa Nur Safitri', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 116, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Andhika Ricky', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 117, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Rapiza Akbar', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+['id' => 118, 'division' => 'pppm', 'role' => 'Anggota PPPM', 'name' => 'Ferdy Irmansyah', 'photo_primary' => '', 'photo_secondary' => '', 'tupoksi' => []],
+]
+]
+];
 
-    $divisionInfo = [
-        'psdm' => [
-            'name' => 'PSDM (Pengembangan Sumber Daya Manusia)',
-            'tupoksi' => [
-                "Mengelola proses perekrutan dan pembinaan anggota baru.",
-                "Menyediakan sarana pengembangan diri bagi anggota.",
-                "Menyelenggarakan kokulikuler.",
-                "Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."
-            ]
-        ],
-        'komwira' => [
-            'name' => 'KOMWIRA (Komunikasi, Media, dan Wirausaha)',
-            'tupoksi' => [
-                "Menyampaikan informasi organisasi kepada anggota maupun pihak luar.",
-                "Mengelola media sosial dan platform komunikasi organisasi.",
-                "Membuat konten publikasi (poster, berita, dokumentasi).",
-                "Mendokumentasikan seluruh kegiatan organisasi.",
-                "Merancang program usaha untuk mendukung dana organisasi."
-            ]
-        ],
-        'pppm' => [
-            'name' => 'PPPM (Penelitian, Pengembangan, dan Pengabdian Masyarakat)',
-            'tupoksi' => [
-                "Mengembangkan inovasi berbasis teknologi dan Sistem Informasi.",
-                "Melakukan kajian terhadap isu-isu teknologi, pendidikan, dan masyarakat.",
-                "Menyelenggarakan seminar, diskusi ilmiah, atau forum akademik.",
-                "Merancang dan melaksanakan kegiatan pengabdian kepada masyarakat."
-            ]
-        ]
-    ];
+$divisionInfo = [
+'psdm' => [
+'name' => 'PSDM (Pengembangan Sumber Daya Manusia)',
+'tupoksi' => [
+"Mengelola proses perekrutan dan pembinaan anggota baru.",
+"Menyediakan sarana pengembangan diri bagi anggota.",
+"Menyelenggarakan kokulikuler.",
+"Membentuk kader yang berkomitmen dan siap melanjutkan kepengurusan."
+]
+],
+'komwira' => [
+'name' => 'KOMWIRA (Komunikasi, Media, dan Wirausaha)',
+'tupoksi' => [
+"Menyampaikan informasi organisasi kepada anggota maupun pihak luar.",
+"Mengelola media sosial dan platform komunikasi organisasi.",
+"Membuat konten publikasi (poster, berita, dokumentasi).",
+"Mendokumentasikan seluruh kegiatan organisasi.",
+"Merancang program usaha untuk mendukung dana organisasi."
+]
+],
+'pppm' => [
+'name' => 'PPPM (Penelitian, Pengembangan, dan Pengabdian Masyarakat)',
+'tupoksi' => [
+"Mengembangkan inovasi berbasis teknologi dan Sistem Informasi.",
+"Melakukan kajian terhadap isu-isu teknologi, pendidikan, dan masyarakat.",
+"Menyelenggarakan seminar, diskusi ilmiah, atau forum akademik.",
+"Merancang dan melaksanakan kegiatan pengabdian kepada masyarakat."
+]
+]
+];
 @endphp
 
 <!-- WRAPPER UTAMA -->
-<div class="relative w-full min-h-screen bg-slate-950 text-slate-800" 
-     id="struktur" 
-     x-data="{ 
+<div class="relative w-full min-h-screen bg-slate-950 text-slate-800"
+    id="struktur"
+    x-data="{ 
         selectedPeriod: '{{ $defaultPeriod }}', 
         activeDiv: 'koordinator',
         covers: {{ json_encode($divisionalCovers) }}
      }"
-     x-init="$watch('selectedPeriod', value => { activeDiv = 'koordinator'; })">
+    x-init="$watch('selectedPeriod', value => { activeDiv = 'koordinator'; })">
 
-    <!-- LAYER FIXED BACKGROUND FULL 16:9 -->
-    <div x-show="selectedPeriod !== '2024-2025'" class="fixed inset-0 z-0 pointer-events-none overflow-hidden" x-cloak>
+    <!-- LAYER FIXED BACKGROUND FULL 16:9 (KHUSUS DESKTOP) -->
+    <div x-show="selectedPeriod !== '2024-2025'" class="hidden md:block fixed inset-0 z-0 pointer-events-none overflow-hidden" x-cloak>
         <template x-for="(divCovers, periodKey) in covers" :key="periodKey">
             <template x-for="(url, divKey) in divCovers" :key="divKey">
                 <div x-show="selectedPeriod === periodKey && activeDiv === divKey"
-                     x-transition:enter="transition opacity duration-500 ease-out"
-                     x-transition:enter-start="opacity-0"
-                     x-transition:enter-end="opacity-100"
-                     x-transition:leave="transition opacity duration-300 ease-in"
-                     x-transition:leave-start="opacity-100"
-                     x-transition:leave-end="opacity-0"
-                     class="absolute inset-0 w-full h-full">
+                    x-transition:enter="transition opacity duration-500 ease-out"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition opacity duration-300 ease-in"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="absolute inset-0 w-full h-full">
                     <img :src="url" alt="Background Divisi 16:9" class="w-full h-full object-cover object-center opacity-90">
                 </div>
             </template>
@@ -142,8 +142,8 @@
     </div>
 
     <!-- CONTENT LAYER (ULTRA-CLEAR GLASSMORPHISM) -->
-    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16 space-y-12">
-    
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-16 space-y-10 md:space-y-12">
+
         {{-- Header Section & Dropdown Periode --}}
         <div class="text-center max-w-3xl mx-auto space-y-4 pt-4">
             <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-lg">
@@ -152,13 +152,13 @@
             <p class="text-white text-sm md:text-base font-semibold max-w-xl mx-auto drop-shadow-md">
                 Mengenal jajaran pengurus, pembagian divisi, dan tugas pokok pengurus Unitas Sistem Informasi Universitas Indraprasta PGRI.
             </p>
-            
+
             <div class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-xl px-5 py-2.5 rounded-2xl border border-white/40 shadow-2xl mt-2">
                 <span class="text-xs font-bold text-white uppercase tracking-wider drop-shadow-sm">PERIODE:</span>
-                <select x-model="selectedPeriod" 
-                        class="bg-transparent text-sm font-extrabold text-blue-300 focus:outline-none cursor-pointer">
+                <select x-model="selectedPeriod"
+                    class="bg-transparent text-sm font-extrabold text-blue-300 focus:outline-none cursor-pointer">
                     @foreach($periods as $p)
-                        <option value="{{ $p['id'] }}" class="bg-slate-900 text-white font-semibold">{{ $p['label'] }}</option>
+                    <option value="{{ $p['id'] }}" class="bg-slate-900 text-white font-semibold">{{ $p['label'] }}</option>
                     @endforeach
                 </select>
             </div>
@@ -169,227 +169,260 @@
         {{-- ========================================== --}}
         <div x-show="selectedPeriod === '2024-2025'" class="space-y-12" x-cloak>
             @php
-                $data24 = $allStructureData['2024-2025'];
+            $data24 = $allStructureData['2024-2025'];
             @endphp
 
-            <div class="flex items-center justify-center gap-3 flex-wrap mb-12">
+            <div class="grid grid-cols-2 gap-2 mt-6 md:mt-0 mb-8 md:mb-12 md:flex md:items-center md:justify-center md:gap-3 md:flex-wrap">
                 @foreach($data24['divisions'] as $div)
-                    <button 
-                        type="button"
-                        @click="activeDiv = '{{ $div['id'] }}'"
-                        :class="activeDiv === '{{ $div['id'] }}' ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 border-blue-400' : 'bg-white/20 text-white border border-white/40 hover:bg-white/30 backdrop-blur-xl'"
-                        class="px-6 py-2.5 rounded-full text-xs md:text-sm transition-all duration-300 uppercase tracking-wider cursor-pointer border font-semibold drop-shadow-sm">
-                        {{ $div['name'] }}
-                    </button>
+                <button
+                    type="button"
+                    @click="activeDiv = '{{ $div['id'] }}'"
+                    :aria-pressed="activeDiv === '{{ $div['id'] }}' ? 'true' : 'false'"
+                    :class="activeDiv === '{{ $div['id'] }}' 
+                            ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 border-blue-400' 
+                            : 'bg-white/20 text-white border-white/40 hover:bg-white/30 backdrop-blur-xl'"
+                    class="px-3 sm:px-4 md:px-6 py-2.5 rounded-full text-xs md:text-sm transition-all duration-300 uppercase tracking-wider cursor-pointer border font-semibold drop-shadow-sm text-center">
+                    {{ $div['name'] }}
+                </button>
                 @endforeach
             </div>
 
             @foreach($data24['divisions'] as $div)
-                <div x-show="activeDiv === '{{ $div['id'] }}'" class="space-y-12" x-cloak>
-                    <div class="flex justify-center flex-wrap gap-8 items-start">
-                        @foreach($data24['members'] as $m)
-                            @if($m['division'] === $div['id'])
-                                <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border {{ $m['role'] === 'Koordinator' ? 'border-blue-400 ring-4 ring-blue-500/30' : 'border-white/40' }} shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-sm">
-                                    <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+            <div x-show="activeDiv === '{{ $div['id'] }}'" class="space-y-12" x-cloak>
+                <div class="flex justify-center flex-wrap gap-8 items-start">
+                    @foreach($data24['members'] as $m)
+                    @if($m['division'] === $div['id'])
+                    <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border {{ $m['role'] === 'Koordinator' ? 'border-blue-400 ring-4 ring-blue-500/30' : 'border-white/40' }} shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden w-full sm:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] max-w-sm">
+                        <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
 
-                                    <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10">
-                                        @if(!empty($m['photo_primary']))
-                                            <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}" class="absolute inset-0 w-full h-full object-cover">
-                                        @else
-                                            <svg class="w-24 h-24 fill-current text-slate-300" viewBox="0 0 24 24">
-                                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                            </svg>
-                                        @endif
-                                    </div>
-
-                                    <div class="text-center space-y-1 relative z-10">
-                                        <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">{{ $m['role'] }}</span>
-                                        <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
-                                    </div>
-                                </div>
+                        <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10">
+                            @if(!empty($m['photo_primary']))
+                            <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}" class="absolute inset-0 w-full h-full object-cover">
+                            @else
+                            <svg class="w-24 h-24 fill-current text-slate-300 mx-auto my-auto mt-16" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                            </svg>
                             @endif
-                        @endforeach
+                        </div>
+
+                        <div class="text-center space-y-1 relative z-10">
+                            <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">{{ $m['role'] }}</span>
+                            <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
+                        </div>
                     </div>
+                    @endif
+                    @endforeach
                 </div>
+            </div>
             @endforeach
         </div>
 
         {{-- ======================================================== --}}
         {{-- KONDISI B: LOGIC LAYOUT PERIODE 2025-2026 & 2026-2027 --}}
         {{-- ======================================================== --}}
-        <div x-show="selectedPeriod !== '2024-2025'" class="space-y-12" x-cloak>
+        <div x-show="selectedPeriod !== '2024-2025'" class="space-y-10 md:space-y-12" x-cloak>
             @foreach(['2025-2026', '2026-2027'] as $pKey)
-                <div x-show="selectedPeriod === '{{ $pKey }}'" class="space-y-12" x-cloak>
-                    @php
-                        $divs = $allStructureData[$pKey]['divisions'] ?? [];
-                        $members = $allStructureData[$pKey]['members'] ?? [];
-                    @endphp
+            <div x-show="selectedPeriod === '{{ $pKey }}'" class="space-y-10 md:space-y-12" x-cloak>
+                @php
+                $divs = $allStructureData[$pKey]['divisions'] ?? [];
+                $members = $allStructureData[$pKey]['members'] ?? [];
+                @endphp
 
-                    {{-- Filter Tab Divisi --}}
-                    <div class="flex items-center justify-center gap-3 flex-wrap mb-12">
-                        @foreach($divs as $div)
-                            <button 
-                                type="button"
-                                @click="activeDiv = '{{ $div['id'] }}'"
-                                :class="activeDiv === '{{ $div['id'] }}' ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 border-blue-400' : 'bg-white/20 text-white border border-white/40 hover:bg-white/30 backdrop-blur-xl'"
-                                class="px-6 py-2.5 rounded-full text-xs md:text-sm transition-all duration-300 uppercase tracking-wider cursor-pointer border font-semibold drop-shadow-sm">
-                                {{ $div['name'] }}
-                            </button>
+                {{-- Filter Tab Divisi --}}
+                <div class="grid grid-cols-2 gap-2 mt-6 md:mt-0 mb-6 md:mb-12 md:flex md:items-center md:justify-center md:gap-3 md:flex-wrap">
+                    @foreach($divs as $div)
+                    <button
+                        type="button"
+                        @click="activeDiv = '{{ $div['id'] }}'"
+                        :aria-pressed="activeDiv === '{{ $div['id'] }}' ? 'true' : 'false'"
+                        :class="activeDiv === '{{ $div['id'] }}' 
+                                    ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 border-blue-400' 
+                                    : 'bg-white/20 text-white border-white/40 hover:bg-white/30 backdrop-blur-xl'"
+                        class="px-3 sm:px-4 md:px-6 py-2.5 rounded-full text-xs md:text-sm transition-all duration-300 uppercase tracking-wider cursor-pointer border font-semibold drop-shadow-sm text-center">
+                        {{ $div['name'] }}
+                    </button>
+                    @endforeach
+                </div>
+
+                {{-- Looping Divisi --}}
+                @foreach($divs as $div)
+                <div x-show="activeDiv === '{{ $div['id'] }}'" class="space-y-8 md:space-y-12" x-cloak>
+
+                    {{-- HEADER BANNER CARD KHUSUS MOBILE (TEKS FULL LENGKAP DI CENTER-BOTTOM OVERLAY) --}}
+                    <template x-if="covers[selectedPeriod] && covers[selectedPeriod]['{{ $div['id'] }}']">
+                        <div class="block md:hidden relative w-full aspect-video rounded-2xl overflow-hidden border border-white/30 shadow-2xl bg-slate-900 group mb-4">
+                            <img :src="covers[selectedPeriod]['{{ $div['id'] }}']"
+                                alt="Banner Divisi {{ $div['name'] }}"
+                                class="w-full h-full object-cover object-center">
+
+                            <!-- Gradient Overlay Pekat di Bawah Biar Teks Sangat Jelas -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent"></div>
+
+                            <!-- Teks Nama Lengkap Divisi di Center-Bottom -->
+                            <div class="absolute bottom-3 inset-x-4 text-center">
+                                @if(isset($divisionInfo[$div['id']]))
+                                <h4 class="text-xs sm:text-sm font-extrabold text-white tracking-wide drop-shadow-md leading-tight">
+                                    {{ $divisionInfo[$div['id']]['name'] }}
+                                </h4>
+                                @else
+                                <h4 class="text-sm font-extrabold text-white tracking-wide drop-shadow-md">
+                                    {{ $div['name'] }}
+                                </h4>
+                                @endif
+                            </div>
+                        </div>
+                    </template>
+
+                    {{-- Tupoksi Kotak Divisi --}}
+                    @if(isset($divisionInfo[$div['id']]))
+                    <div class="max-w-4xl mx-auto space-y-3">
+                        {{-- Judul Luar khusus Desktop Saja (Di Mobile udah pindah ke dalam Banner Foto) --}}
+                        <h3 class="hidden md:block text-lg md:text-xl font-extrabold text-center tracking-tight text-white drop-shadow-md">
+                            {{ $divisionInfo[$div['id']]['name'] }}
+                        </h3>
+
+                        <div class="bg-slate-900/60 md:bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/30 shadow-2xl relative overflow-hidden group">
+                            <div class="absolute top-0 left-0 w-full h-1.5 bg-blue-500 origin-left"></div>
+                            <span class="text-xs font-bold text-blue-300 uppercase tracking-wider block mb-3 drop-shadow-sm">Tupoksi Utama Divisi</span>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs text-white font-semibold list-disc pl-4 leading-relaxed drop-shadow-md marker:text-white">
+                                @foreach($divisionInfo[$div['id']]['tupoksi'] as $tup)
+                                <li>{{ $tup }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    </div>
+                    @endif
+
+                    @if($div['id'] === 'koordinator')
+
+                    {{-- Koordinator Utama --}}
+                    <div class="flex justify-center">
+                        @foreach($members as $m)
+                        @if($m['division'] === 'koordinator' && $m['role'] === 'Koordinator')
+                        <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-blue-400 ring-4 ring-blue-500/20 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden w-full max-w-sm">
+
+                            <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+
+                            <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
+                                x-data="{ 
+                                                        isFormal: true, 
+                                                        timer: null,
+                                                        startHover() {
+                                                            this.isFormal = false;
+                                                            this.timer = setInterval(() => { this.isFormal = !this.isFormal; }, 1500);
+                                                        },
+                                                        endHover() {
+                                                            clearInterval(this.timer);
+                                                            this.isFormal = true;
+                                                        }
+                                                    }"
+                                @mouseenter="startHover()" @mouseleave="endHover()">
+
+                                <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}"
+                                    :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                    onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
+
+                                <img src="{{ asset($m['photo_secondary']) }}" alt="{{ $m['name'] }} Pose"
+                                    :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                    onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
+                            </div>
+
+                            <div class="text-center space-y-1 relative z-10">
+                                <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">{{ $m['role'] }}</span>
+                                <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
+                            </div>
+
+                            {{-- TUPOKSI INDIVIDU KOORDINATOR --}}
+                            @if(!empty($m['tupoksi']))
+                            <div class="mt-4 pt-4 border-t border-white/20 text-left relative z-10">
+                                <span class="text-[10px] font-bold text-blue-300 uppercase tracking-wider block mb-2 drop-shadow-sm">Detail Tugas:</span>
+                                <ul class="text-xs text-white space-y-1.5 list-disc pl-4 font-semibold leading-relaxed drop-shadow-sm">
+                                    @foreach($m['tupoksi'] as $tup)
+                                    <li>{{ $tup }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                        </div>
+                        @endif
                         @endforeach
                     </div>
 
-                    {{-- Looping Divisi --}}
-                    @foreach($divs as $div)
-                        <div x-show="activeDiv === '{{ $div['id'] }}'" class="space-y-12" x-cloak>
-                            
-                            {{-- Tupoksi Kotak Divisi --}}
-                            @if(isset($divisionInfo[$div['id']]))
-                                <div class="max-w-4xl mx-auto space-y-3">
-                                    <h3 class="text-lg md:text-xl font-extrabold text-center tracking-tight text-white drop-shadow-md">
-                                        {{ $divisionInfo[$div['id']]['name'] }}
-                                    </h3>
-                                    <div class="bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 md:p-8 border border-white/30 shadow-2xl relative overflow-hidden group">
-                                        <div class="absolute top-0 left-0 w-full h-1.5 bg-blue-500 origin-left"></div>
-                                        <span class="text-xs font-bold text-blue-300 uppercase tracking-wider block mb-3 drop-shadow-sm">Tupoksi Utama Divisi</span>
-                                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs text-white font-semibold list-disc pl-4 leading-relaxed drop-shadow-sm">
-                                            @foreach($divisionInfo[$div['id']]['tupoksi'] as $tup)
-                                                <li>{{ $tup }}</li>
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                </div>
+                    {{-- Jajaran BPH --}}
+                    <div class="grid grid-cols-1 sm:grid-cols-2 {{ $pKey === '2025-2026' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }} gap-6 items-start">
+                        @foreach($members as $m)
+                        @if($m['division'] === 'koordinator' && $m['role'] !== 'Koordinator')
+                        <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/30 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+
+                            <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+
+                            <div class="relative w-full h-64 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
+                                x-data="{ 
+                                                        isFormal: true, 
+                                                        timer: null,
+                                                        startHover() {
+                                                            this.isFormal = false;
+                                                            this.timer = setInterval(() => { this.isFormal = !this.isFormal; }, 1500);
+                                                        },
+                                                        endHover() {
+                                                            clearInterval(this.timer);
+                                                            this.isFormal = true;
+                                                        }
+                                                    }"
+                                @mouseenter="startHover()" @mouseleave="endHover()">
+
+                                <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}"
+                                    :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                    onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
+
+                                <img src="{{ asset($m['photo_secondary']) }}" alt="{{ $m['name'] }} Pose"
+                                    :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                    onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
+                            </div>
+
+                            <div class="text-center space-y-1 relative z-10">
+                                <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">{{ $m['role'] }}</span>
+                                <h3 class="text-base font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
+                            </div>
+
+                            {{-- TUPOKSI INDIVIDU BPH --}}
+                            @if(!empty($m['tupoksi']))
+                            <div class="mt-4 pt-4 border-t border-white/20 text-left relative z-10">
+                                <span class="text-[10px] font-bold text-blue-300 uppercase tracking-wider block mb-2 drop-shadow-sm">Detail Tugas:</span>
+                                <ul class="text-xs text-white space-y-1.5 list-disc pl-4 font-semibold leading-relaxed drop-shadow-sm">
+                                    @foreach($m['tupoksi'] as $tup)
+                                    <li>{{ $tup }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                             @endif
+                        </div>
+                        @endif
+                        @endforeach
+                    </div>
 
-                            @if($div['id'] === 'koordinator')
-                                
-                                {{-- Koordinator Utama --}}
-                                <div class="flex justify-center">
-                                    @foreach($members as $m)
-                                        @if($m['division'] === 'koordinator' && $m['role'] === 'Koordinator')
-                                            <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-blue-400 ring-4 ring-blue-500/20 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden w-full max-w-sm">
-                                                
-                                                <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+                    @else
 
-                                                <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
-                                                     x-data="{ 
-                                                        isFormal: true, 
-                                                        timer: null,
-                                                        startHover() {
-                                                            this.isFormal = false;
-                                                            this.timer = setInterval(() => { this.isFormal = !this.isFormal; }, 1500);
-                                                        },
-                                                        endHover() {
-                                                            clearInterval(this.timer);
-                                                            this.isFormal = true;
-                                                        }
-                                                    }"
-                                                     @mouseenter="startHover()" @mouseleave="endHover()">
-                                                    
-                                                    <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}"
-                                                         :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
-                                                         class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                         onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
+                    {{-- Divisi Standar --}}
+                    @php
+                    $kadiv = collect($members)->first(fn($m) => $m['division'] === $div['id'] && (stripos($m['role'], 'Kepala') !== false || stripos($m['role'], 'Kadiv') !== false));
+                    if(!$kadiv) {
+                    $kadiv = collect($members)->first(fn($m) => $m['division'] === $div['id']);
+                    }
+                    @endphp
 
-                                                    <img src="{{ asset($m['photo_secondary']) }}" alt="{{ $m['name'] }} Pose"
-                                                         :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
-                                                         class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                         onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
-                                                </div>
+                    @if($kadiv)
+                    <div class="flex justify-center">
+                        <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-blue-400 ring-4 ring-blue-500/20 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden w-full max-w-sm">
 
-                                                <div class="text-center space-y-1 relative z-10">
-                                                    <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">{{ $m['role'] }}</span>
-                                                    <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
-                                                </div>
+                            <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
 
-                                                {{-- BALIKIN TUPOKSI INDIVIDU KOORDINATOR --}}
-                                                @if(!empty($m['tupoksi']))
-                                                    <div class="mt-4 pt-4 border-t border-white/20 text-left relative z-10">
-                                                        <span class="text-[10px] font-bold text-blue-300 uppercase tracking-wider block mb-2 drop-shadow-sm">Detail Tugas:</span>
-                                                        <ul class="text-xs text-white space-y-1.5 list-disc pl-4 font-semibold leading-relaxed drop-shadow-sm">
-                                                            @foreach($m['tupoksi'] as $tup)
-                                                                <li>{{ $tup }}</li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-
-                                {{-- Jajaran BPH --}}
-                                <div class="grid grid-cols-1 sm:grid-cols-2 {{ $pKey === '2025-2026' ? 'lg:grid-cols-4' : 'lg:grid-cols-3' }} gap-6 items-start">
-                                    @foreach($members as $m)
-                                        @if($m['division'] === 'koordinator' && $m['role'] !== 'Koordinator')
-                                            <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/30 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
-                                                
-                                                <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
-
-                                                <div class="relative w-full h-64 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
-                                                     x-data="{ 
-                                                        isFormal: true, 
-                                                        timer: null,
-                                                        startHover() {
-                                                            this.isFormal = false;
-                                                            this.timer = setInterval(() => { this.isFormal = !this.isFormal; }, 1500);
-                                                        },
-                                                        endHover() {
-                                                            clearInterval(this.timer);
-                                                            this.isFormal = true;
-                                                        }
-                                                    }"
-                                                     @mouseenter="startHover()" @mouseleave="endHover()">
-                                                    
-                                                    <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}"
-                                                         :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
-                                                         class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                         onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
-
-                                                    <img src="{{ asset($m['photo_secondary']) }}" alt="{{ $m['name'] }} Pose"
-                                                         :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
-                                                         class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                         onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
-                                                </div>
-
-                                                <div class="text-center space-y-1 relative z-10">
-                                                    <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">{{ $m['role'] }}</span>
-                                                    <h3 class="text-base font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
-                                                </div>
-
-                                                {{-- BALIKIN TUPOKSI INDIVIDU BPH --}}
-                                                @if(!empty($m['tupoksi']))
-                                                    <div class="mt-4 pt-4 border-t border-white/20 text-left relative z-10">
-                                                        <span class="text-[10px] font-bold text-blue-300 uppercase tracking-wider block mb-2 drop-shadow-sm">Detail Tugas:</span>
-                                                        <ul class="text-xs text-white space-y-1.5 list-disc pl-4 font-semibold leading-relaxed drop-shadow-sm">
-                                                            @foreach($m['tupoksi'] as $tup)
-                                                                <li>{{ $tup }}</li>
-                                                            @endforeach
-                                                        </ul>
-                                                    </div>
-                                                @endif
-                                            </div>
-                                        @endif
-                                    @endforeach
-                                </div>
-
-                            @else
-
-                                {{-- Divisi Standar --}}
-                                @php
-                                    $kadiv = collect($members)->first(fn($m) => $m['division'] === $div['id'] && (stripos($m['role'], 'Kepala') !== false || stripos($m['role'], 'Kadiv') !== false));
-                                    if(!$kadiv) {
-                                        $kadiv = collect($members)->first(fn($m) => $m['division'] === $div['id']);
-                                    }
-                                @endphp
-
-                                @if($kadiv)
-                                    <div class="flex justify-center">
-                                        <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-blue-400 ring-4 ring-blue-500/20 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden w-full max-w-sm">
-                                            
-                                            <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
-
-                                            <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
-                                                 x-data="{ 
+                            <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
+                                x-data="{ 
                                                     isFormal: true, 
                                                     timer: null,
                                                     startHover() {
@@ -401,38 +434,38 @@
                                                         this.isFormal = true;
                                                     }
                                                 }"
-                                                 @mouseenter="startHover()" @mouseleave="endHover()">
-                                                
-                                                <img src="{{ asset($kadiv['photo_primary']) }}" alt="{{ $kadiv['name'] }}"
-                                                     :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
-                                                     class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                     onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
+                                @mouseenter="startHover()" @mouseleave="endHover()">
 
-                                                <img src="{{ asset($kadiv['photo_secondary']) }}" alt="{{ $kadiv['name'] }} Pose"
-                                                     :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
-                                                     class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                     onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
-                                            </div>
+                                <img src="{{ asset($kadiv['photo_primary']) }}" alt="{{ $kadiv['name'] }}"
+                                    :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                    onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
 
-                                            <div class="text-center space-y-1 relative z-10">
-                                                <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">Kepala Divisi</span>
-                                                <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $kadiv['name'] }}</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endif
+                                <img src="{{ asset($kadiv['photo_secondary']) }}" alt="{{ $kadiv['name'] }} Pose"
+                                    :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                    onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
+                            </div>
 
-                                {{-- Anggota Divisi --}}
-                                <div>
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-                                        @foreach($members as $m)
-                                            @if($m['division'] === $div['id'] && $m['id'] !== ($kadiv['id'] ?? null))
-                                                <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/30 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
-                                                    
-                                                    <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+                            <div class="text-center space-y-1 relative z-10">
+                                <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">Kepala Divisi</span>
+                                <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $kadiv['name'] }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
 
-                                                    <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
-                                                         x-data="{ 
+                    {{-- Anggota Divisi --}}
+                    <div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+                            @foreach($members as $m)
+                            @if($m['division'] === $div['id'] && $m['id'] !== ($kadiv['id'] ?? null))
+                            <div class="group bg-slate-900/40 backdrop-blur-2xl rounded-2xl p-6 border border-white/30 shadow-2xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 relative overflow-hidden">
+
+                                <div class="absolute top-0 inset-x-0 w-full h-1.5 bg-blue-500 origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out z-20"></div>
+
+                                <div class="relative w-full h-72 rounded-xl overflow-hidden mb-5 bg-slate-900/40 border border-white/30 z-10"
+                                    x-data="{ 
                                                             isFormal: true, 
                                                             timer: null,
                                                             startHover() {
@@ -444,35 +477,35 @@
                                                                 this.isFormal = true;
                                                             }
                                                         }"
-                                                         @mouseenter="startHover()" @mouseleave="endHover()">
-                                                        
-                                                        <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}"
-                                                             :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
-                                                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                             onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
+                                    @mouseenter="startHover()" @mouseleave="endHover()">
 
-                                                        <img src="{{ asset($m['photo_secondary']) }}" alt="{{ $m['name'] }} Pose"
-                                                             :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
-                                                             class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
-                                                             onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
-                                                    </div>
+                                    <img src="{{ asset($m['photo_primary']) }}" alt="{{ $m['name'] }}"
+                                        :class="isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-110'"
+                                        class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                        onerror="this.src='https://placehold.co/400x500/334EAC/FFF?text=Foto+Normal'">
 
-                                                    <div class="text-center space-y-1 relative z-10">
-                                                        <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">Anggota Divisi</span>
-                                                        <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
-                                                    </div>
-                                                </div>
-                                            @endif
-                                        @endforeach
-                                    </div>
+                                    <img src="{{ asset($m['photo_secondary']) }}" alt="{{ $m['name'] }} Pose"
+                                        :class="!isFormal ? 'opacity-100 scale-100' : 'opacity-0 scale-95'"
+                                        class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out"
+                                        onerror="this.src='https://placehold.co/400x500/0284C7/FFF?text=Foto+Pose'">
                                 </div>
 
+                                <div class="text-center space-y-1 relative z-10">
+                                    <span class="text-[11px] font-bold text-blue-300 uppercase tracking-wider block drop-shadow-sm">Anggota Divisi</span>
+                                    <h3 class="text-lg font-extrabold text-white group-hover:text-blue-300 transition-colors drop-shadow-sm">{{ $m['name'] }}</h3>
+                                </div>
+                            </div>
                             @endif
-
+                            @endforeach
                         </div>
-                    @endforeach
+                    </div>
+
+                    @endif
 
                 </div>
+                @endforeach
+
+            </div>
             @endforeach
 
         </div>

@@ -202,3 +202,19 @@ Semua catatan perubahan, rilis fitur, dan pembaruan sistem dicatat dalam dokumen
 - **Fix Asymmetric Container Width & Margin**:
   - **Sebelumnya**: Komponen `info-corner` menggunakan struktur kontainer dan grid standar (`grid-cols-2`) yang tidak seragam dengan section lain di sekitarnya, membuat batas kartu terlihat tidak sejajar.
   - **Sesudahnya**: Menyamakan struktur kontainer luar menggunakan wrapper `max-w-[1440px] px-6 lg:px-12` dan menerapkan sistem grid presisi **12-kolom Tailwind (`grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8`)** dengan ukuran kartu `lg:col-span-6`. Hasilnya, layout sejajar presisi (*aligned*) dengan `about-section` dan `academic-section`.
+
+
+  ## Release v2.3.1
+
+### 🎨 UI/UX & Responsive Refactoring
+- 📱 **Mobile Structural Layout**: Implemented **Hybrid Card Aspect-Ratio (16:9)** header banner for mobile viewports to prevent landscape image cropping.
+- 🏷️ **Mobile Division Overlay**: Relocated full division titles to **Center-Bottom Overlay** inside group banner images with dark gradient masks.
+- ✨ **Glassmorphism Consistency**: Unified mobile & desktop component styling using `bg-slate-900/60` and `backdrop-blur-2xl` to eliminate unwanted white block artifacts on mobile.
+- 🔘 **Filter Tab Buttons**: Fixed inactive tab state on mobile from solid white to transparent glassmorphism (`bg-white/20`) while maintaining `#334EAC` Royal Blue active highlights.
+
+### 🐛 Bug Fixes
+- 🖼️ **Brand Logo Path**: Resolved broken image rendering in `navigation.blade.php` by aligning asset paths with `public/images/`.
+- 🔤 **Contrast & Visibility**: Fixed unreadable dark text (`text-slate-900`) on dark backgrounds in mobile Tupoksi and division titles.
+
+---
+**Core Brand Preservation**: All accent colors remain locked to `#334EAC` Royal Blue with Minimalist White foundational layout structure.

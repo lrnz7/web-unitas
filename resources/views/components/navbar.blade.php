@@ -22,12 +22,12 @@
     $navItems = $navItems ?? ($jsonData['navigation'] ?? []);
 @endphp
 
-<header class="w-full bg-white border-b border-gray-100 sticky top-0 z-50">
+<header class="w-full bg-white border-b border-slate-200 sticky top-0 z-50">
     <nav class="w-full max-w-[1440px] px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between mx-auto" aria-label="Navigasi Utama">
         
         {{-- Brand Logo --}}
         <a href="{{ url('/') }}" class="flex items-center gap-3 group focus:outline-none rounded-xl p-1 transition-transform duration-200 hover:scale-[1.02]">
-            <img src="{{ asset('images/logo-unitas.svg') }}" alt="{{ $brand['alt'] ?? 'Logo Unitas SI' }}" class="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:rotate-2">
+            <img src="{{ asset('images/logo-unitas.png') }}" alt="{{ $brand['alt'] ?? 'Logo Unitas SI' }}" class="h-9 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:rotate-2">
             <span class="sr-only">{{ $brand['name'] }}</span>
         </a>
 
